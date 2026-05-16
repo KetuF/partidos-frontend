@@ -1,0 +1,37 @@
+<div class="tabla-wrapper">
+  <h2 class="tabla-titulo">Tabla de Posiciones</h2>
+  <div class="tabla-container">
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>PJ</th>
+          <th>G</th>
+          <th>E</th>
+          <th>P</th>
+          <th>GF</th>
+          <th>GC</th>
+          <th>DG</th>
+          <th>PTS</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (equipo of posiciones; track equipo.nombre; let i = $index) {
+          <tr [class.lider]="i === 0">
+            <td class="pos-num">{{ i + 1 }}</td>
+            <td class="equipo-nombre">{{ equipo.nombre }}</td>
+            <td>{{ equipo.PJ }}</td>
+            <td>{{ equipo.PG }}</td>
+            <td>{{ equipo.PE }}</td>
+            <td>{{ equipo.PP }}</td>
+            <td>{{ equipo.GF }}</td>
+            <td>{{ equipo.GC }}</td>
+            <td>{{ equipo.DG }}</td>
+            <td class="puntos">{{ equipo.PTS }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

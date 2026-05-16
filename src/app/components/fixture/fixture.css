@@ -1,0 +1,107 @@
+.fixture-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.fixture-titulo {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #1d3b5c;
+  padding: 14px 20px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fixture-lista {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.partido-row {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.partido-row:last-child {
+  border-bottom: none;
+}
+
+.partido-row.jugado {
+  background: #fafafa;
+}
+
+.partido-row.proximo {
+  background: #fff3f3;
+  border-left: 4px solid #0064ff;
+}
+
+.partido-fecha {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 600;
+  min-width: 80px;
+}
+
+.partido-equipos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.equipo {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  flex: 1;
+}
+
+.equipo.derecha {
+  text-align: right;
+}
+
+.equipo.ganador {
+  color: #111111;
+  font-weight: 800;
+}
+
+.resultado {
+  min-width: 60px;
+  text-align: center;
+}
+
+.goles {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111111;
+  background: #f5f5f5;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.vs {
+  font-size: 13px;
+  font-weight: 700;
+  color: #cccccc;
+}
+
+.proximo-badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #FF3B3B;
+  letter-spacing: 1px;
+  background: #fff0f0;
+  border: 1px solid #FF3B3B;
+  border-radius: 4px;
+  padding: 2px 2px;
+}

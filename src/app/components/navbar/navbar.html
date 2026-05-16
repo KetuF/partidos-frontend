@@ -1,0 +1,29 @@
+<nav class="navbar-wrapper">
+  <div class="navbar-content">
+    <div class="navbar-logo" (click)="IrAInicio()">
+      <img class="Logo logo-desktop" src="assets/LogoPartidosBlanco.png" alt="Logo">
+      <img class="Logo logo-mobile" src="assets/LogoPartidosBlancoMobile.png" alt="Logo">
+    </div>
+    <span class="categoria-actual">{{ categoriaActual }}</span>
+    <button class="menu-btn" (click)="ToggleMenu()">
+      <span class="menu-icon" [class.abierto]="menuAbierto">☰</span>
+    </button>
+  </div>
+
+  <div class="menu-dropdown" [class.visible]="menuAbierto">
+    <div class="menu-item" (click)="ToggleCategorias()">
+      Categorías <span class="submenu-arrow" [class.abierto]="categoriasAbierto">›</span>
+    </div>
+    <div class="submenu" [class.visible]="categoriasAbierto">
+      @for (categoria of categorias; track categoria.id) {
+        <div class="submenu-item" (click)="IrACategoria(categoria.id)">
+          {{ categoria.nombre }}
+        </div>
+      }
+    </div>
+    <div class="menu-divider"></div>
+    <div class="menu-item" (click)="IrAEquipos()">
+      Equipos
+    </div>
+  </div>
+</nav>

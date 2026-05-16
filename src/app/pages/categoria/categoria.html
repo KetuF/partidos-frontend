@@ -1,0 +1,18 @@
+<app-navbar [categoriaActual]="categoria?.nombre || ''"></app-navbar>
+
+<div class="categoria-wrapper">
+  <app-tabla-posiciones [partidos]="partidos" [equipos]="equipos"></app-tabla-posiciones>
+
+  <div class="banner-publicidad">
+    <span>PUBLICIDAD</span>
+  </div>
+
+  <app-fixture [partidos]="partidos"></app-fixture>
+
+  <app-tabla-goleadores [goleadores]="goleadores"></app-tabla-goleadores>
+
+  <div class="banner-publicidad">
+    <span>PUBLICIDAD</span>
+  </div>
+</div>
+<app-footer></app-footer>

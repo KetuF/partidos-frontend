@@ -1,0 +1,25 @@
+<app-navbar categoriaActual="Equipos"></app-navbar>
+
+<div class="equipos-wrapper">
+  @for (categoria of GetCategorias(); track categoria) {
+    <div class="categoria-seccion">
+      <h2 class="categoria-titulo">{{ categoria }}</h2>
+      <div class="equipos-lista">
+        @for (equipo of GetEquiposPorCategoria(categoria); track equipo.id) {
+          <div class="equipo-card" 
+               [class.seleccionado]="equipoSeleccionado?.id === equipo.id"
+               (click)="SeleccionarEquipo(equipo)">
+            <span class="equipo-nombre">{{ equipo.nombre }}</span>
+            <span class="equipo-arrow">{{ equipoSeleccionado?.id === equipo.id ? '↑' : '↓' }}</span>
+          </div>
+          @if (equipoSeleccionado?.id === equipo.id) {
+            <div class="fixture-inline">
+              <app-fixture [partidos]="partidosEquipo"></app-fixture>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<div class="inicio-wrapper">
+
+  <div class="temporada-badge">
+    <span class="dot-verde"></span>
+    Temporada 2026
+  </div>
+
+  <div class="hero">
+    <div class="logo-container">
+      <div class="logo">
+        <div class="CapaInvisible">
+          <video #miVideo autoplay muted playsinline preload="auto">
+            <source src="assets/LogoPartidosVideo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <p class="hero-texto">
+      Resultados, posiciones y toda la información de <strong>La liga de veteranos</strong> al alcance de tu mano.
+    </p>
+  </div>
+
+  <section class="splide">
+    <div class="splide__track" style="padding: 2rem">
+      <ul class="splide__list">
+        @for (categoria of categorias; track categoria.id) {
+          <li class="splide__slide">
+            <div class="card" (click)="IrACategoria(categoria.id)">
+              <div class="card-inner">
+                <span class="card-nombre">{{ categoria.nombre }}</span>
+                <div class="card-arrow">→</div>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="ola-wrapper">
+  <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,100 C360,200 1080,0 1440,100 L1440,200 L0,200 Z" fill="#0d1b2a"/>
+  </svg>
+  <div class="fondo-oscuro"></div>
+</div>

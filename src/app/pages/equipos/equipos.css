@@ -1,0 +1,65 @@
+.equipos-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.categoria-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categoria-titulo {
+  font-size: 14px;
+  font-weight: 800;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.equipos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.equipo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #ffffff;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.equipo-card:hover {
+  border-color: #111111;
+  transform: translateX(4px);
+}
+
+.equipo-card.seleccionado {
+  border-color: #0064ff;
+  background: #fff8f8;
+}
+
+.equipo-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.equipo-arrow {
+  font-size: 16px;
+  color: #0064ff;
+  transition: transform 0.3s;
+}
