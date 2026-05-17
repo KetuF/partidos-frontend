@@ -29,14 +29,16 @@ export class Inicio implements OnInit {
             type: 'slide',
             drag: 'free',
             perPage: 2,
+            gap: '16px',
             autoplay: false,
-            padding: '0 2rem',
+            padding: '2rem',
             breakpoints: {
               600: {
                 type: 'slide',
                 drag: 'free',
                 perPage: 2,
-                padding: '0 1rem',
+                gap: '12px',
+                padding: '1rem',
                 rewind: true,
                 rewindSpeed: 10,
                 arrows: false, 
@@ -45,7 +47,8 @@ export class Inicio implements OnInit {
                 type: 'slide',
                 drag: 'free',
                 perPage: 2,
-                padding: '0 1rem',
+                gap: '50px',
+                padding: '1rem',
                 rewind: true,
                 rewindSpeed: 10,
                 arrows: false, 
@@ -54,7 +57,7 @@ export class Inicio implements OnInit {
                 type: 'slide',
                 drag: 'free',
                 perPage: 3,
-                padding: '0 1rem',
+                gap: '14px',
               }
             }
           }).mount();
