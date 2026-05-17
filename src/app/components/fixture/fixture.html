@@ -5,6 +5,9 @@
       <div class="partido-row" [class.proximo]="partido.id === proximoPartidoId" [class.jugado]="partido.jugado">
         <div class="partido-fecha">
           {{ partido.fecha | date: 'dd/MM' }} {{ partido.hora | slice:0:5 }}hs
+          @if (partido.id === proximoPartidoId) {
+            <div class="proximo-badge">PRÓXIMO</div>
+          }
         </div>
         <div class="partido-equipos">
           <span class="equipo" [class.ganador]="partido.jugado && partido.goles_local > partido.goles_visitante">
