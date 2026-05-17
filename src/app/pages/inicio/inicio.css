@@ -102,14 +102,13 @@
 
 .card {
   position: relative;
-  width: 160px;
+  width: 100%;
   height: 220px;
   background: linear-gradient(137deg, rgb(0, 100, 255) 0%, #0d1b2a 100%);
   transition: 0.3s ease;
   border-radius: 24px;
   filter: drop-shadow(0px 0px 20px rgb(0, 100, 255));
   cursor: pointer;
-  flex-shrink: 0;
 }
 
 .card::after {
@@ -244,6 +243,7 @@
 .splide__slide {
   display: flex;
   justify-content: center;
+  max-width: 200px;
 }
 
 .inicio-wrapper {
