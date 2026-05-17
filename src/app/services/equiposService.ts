@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class EquiposService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/categorias`;
+  private apiUrl = `${environment.apiUrl}/equipos`;
 
   GetEquipos(): Observable<Equipo[]> {
     return this.http.get<Equipo[]>(this.apiUrl);
