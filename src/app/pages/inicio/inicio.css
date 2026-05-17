@@ -125,7 +125,7 @@
 }
 
 .card:hover {
-  filter: drop-shadow(0px 0px 30px rgb(0, 100, 255));
+  filter: drop-shadow(0px 0px 5px rgb(0, 100, 255));
 }
 
 .card:hover::after {
