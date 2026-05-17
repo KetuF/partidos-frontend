@@ -34,16 +34,26 @@ export class Inicio implements OnInit {
             padding: '2rem',
             breakpoints: {
               600: {
+                type: 'slide',
+                drag: 'free',
                 perPage: 2,
                 gap: '12px',
                 padding: '1rem',
                 arrows: false,
               },
               448: {
+                type: 'slide',
+                drag: 'free',
                 perPage: 1,
                 gap: '12px',
                 padding: '1rem',
                 arrows: false,
+              },
+              900: {
+                type: 'slide',
+                drag: 'free',
+                perPage: 3,
+                gap: '14px',
               }
             }
           }).mount();

@@ -1,33 +1,25 @@
-<div class="fixture-wrapper">
-  <h2 class="fixture-titulo">Fixture</h2>
-  <div class="fixture-lista">
-    @for (partido of partidos; track partido.id) {
-      <div class="partido-row" [class.proximo]="partido.id === proximoPartidoId" [class.jugado]="partido.jugado">
-        <div class="partido-fecha">
-          {{ partido.fecha | date: 'dd/MM' }} {{ partido.hora | slice:0:5 }}hs
-          @if (partido.id === proximoPartidoId) {
-            <div class="proximo-badge">PRÓXIMO</div>
-          }
-        </div>
-        <div class="partido-equipos">
-          <span class="equipo" [class.ganador]="partido.jugado && partido.goles_local > partido.goles_visitante">
-            {{ partido.equipo_local }}
-          </span>
-          <div class="resultado">
-            @if (partido.jugado) {
-              <span class="goles">{{ partido.goles_local }} - {{ partido.goles_visitante }}</span>
-            } @else {
-              <span class="vs">vs</span>
-            }
-          </div>
-          <span class="equipo derecha" [class.ganador]="partido.jugado && partido.goles_visitante > partido.goles_local">
-            {{ partido.equipo_visitante }}
-          </span>
-        </div>
-        @if (partido.id === proximoPartidoId) {
-          <div class="proximo-badge">PRÓXIMO</div>
+@for (partido of partidos; track partido.id) {
+  <div class="partido-row" [class.proximo]="partido.id === proximoPartidoId" [class.jugado]="partido.jugado">
+    <div class="partido-fecha">
+      {{ partido.fecha | date: 'dd/MM' }} {{ partido.hora | slice:0:5 }}hs
+      @if (partido.id === proximoPartidoId) {
+        <div class="proximo-badge">PRÓXIMO</div>
+      }
+    </div>
+    <div class="partido-equipos">
+      <span class="equipo" [class.ganador]="partido.jugado && partido.goles_local > partido.goles_visitante">
+        {{ partido.equipo_local }}
+      </span>
+      <div class="resultado">
+        @if (partido.jugado) {
+          <span class="goles">{{ partido.goles_local }} - {{ partido.goles_visitante }}</span>
+        } @else {
+          <span class="vs">vs</span>
         }
       </div>
-    }
+      <span class="equipo derecha" [class.ganador]="partido.jugado && partido.goles_visitante > partido.goles_local">
+        {{ partido.equipo_visitante }}
+      </span>
+    </div>
   </div>
-</div>
+}
