@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment'
 @Injectable({ providedIn: 'root' })
 export class PartidosService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/categorias`;
+  private apiUrl = `${environment.apiUrl}/partidos`;
 
   GetPartidosPorCategoria(categoria_id: number): Observable<Partido[]> {
     return this.http.get<Partido[]>(`${this.apiUrl}/categoria/${categoria_id}`);
