@@ -26,7 +26,7 @@ export class Inicio implements OnInit {
         this.cdr.detectChanges();
         setTimeout(() => {
           new Splide('.splide', {
-            type: 'loop',
+            type: 'slide',
             drag: 'free',
             perPage: 3,
             gap: '16px',
