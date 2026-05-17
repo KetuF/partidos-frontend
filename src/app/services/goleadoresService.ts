@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Goleador } from '../interfaces/goleador.interface';
-import { environment } from '../../environmet/enviroment'
+import { environment } from '../../environments/environment'
 
 @Injectable({ providedIn: 'root' })
 export class GoleadoresService {
