@@ -28,7 +28,7 @@ export class Inicio implements OnInit {
           new Splide('.splide', {
             type: 'slide',
             drag: 'free',
-            perPage: 3,
+            perPage: 2,
             gap: '16px',
             autoplay: false,
             padding: '2rem',
