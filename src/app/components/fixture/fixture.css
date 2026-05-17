@@ -105,3 +105,26 @@
   border-radius: 4px;
   padding: 2px 2px;
 }
+
+@media (max-width: 600px) {
+  .partido-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .partido-equipos {
+    width: 100%;
+    order: 1;
+  }
+
+  .partido-fecha {
+    order: 2;
+    min-width: auto;
+    font-size: 11px;
+  }
+
+  .proximo-badge {
+    order: 3;
+  }
+}
