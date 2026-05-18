@@ -32,7 +32,10 @@ export class Fixture implements OnChanges {
     this.FiltrarPorFecha();
   }
 
-  FiltrarPorFecha(): void {
-    this.partidosFiltrados = this.partidos.filter(p => p.numero_fecha === this.fechaSeleccionada);
+FiltrarPorFecha(event?: any): void {
+  if (event) {
+    this.fechaSeleccionada = +event.target.value;
   }
+  this.partidosFiltrados = this.partidos.filter(p => p.numero_fecha === this.fechaSeleccionada);
+}
 }
