@@ -4,7 +4,7 @@
     @for (partido of partidos; track partido.id) {
     <div class="partido-row" [class.proximo]="partido.id === proximoPartidoId" [class.jugado]="partido.jugado">
       <div class="partido-fecha">
-        {{ partido.fecha | date: 'dd/MM' }} {{ partido.hora | slice:0:5 }}hs
+        {{ partido.fecha | date: 'dd/MM' }}{{ partido.hora | slice:0:5 }}hs
         @if (partido.id === proximoPartidoId) {
         <div class="proximo-badge">PRÓXIMO</div>
         }
