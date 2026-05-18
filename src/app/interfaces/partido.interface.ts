@@ -3,6 +3,7 @@ export interface Partido {
   fecha: string;
   hora: string;
   jugado: number;
+  numero_fecha: number;
   goles_local: number;
   goles_visitante: number;
   equipo_local: string;

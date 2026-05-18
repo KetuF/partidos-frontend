@@ -119,12 +119,47 @@
     padding: 2px 2px;
   }
   .partido-row {
-  padding: 14px 20px;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  align-items: center;
-  gap: 0px;
-  transition: background 0.2s;
-  position: relative;
+    gap: 0px;
+  }
 }
+
+.fixture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111111;
+  padding: 14px 20px;
+}
+
+.fixture-titulo {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fecha-select {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+
+.fecha-select:focus {
+  border-color: #1d3b5c;
+}
+
+.fecha-select option {
+  background: #111111;
+  color: #ffffff;
 }
