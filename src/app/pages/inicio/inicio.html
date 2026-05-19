@@ -20,7 +20,7 @@
         @for (categoria of categorias; track categoria.id) {
           <li class="splide__slide">
             <div class="card" (click)="IrACategoria(categoria.id)">
-              <div class="card-inner" style="background-image: url(assets/FondoCard.jpg); background-size: cover; background-position: center;">
+              <div class="card-inner" style="background-image: url(assets/FondoCard.jpg); background-size: cover; background-position: center; border-radius: 24px;">
                 <span class="card-nombre">{{ categoria.nombre }}</span>
                 <div class="card-arrow">→</div>
               </div>
