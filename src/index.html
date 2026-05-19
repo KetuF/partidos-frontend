@@ -22,8 +22,21 @@
 </head>
 </head>
 <body>
-  <div style="background-image: url(assets/FondoCancha.png); background-size: cover; background-position: center; background-attachment: fixed;">
     <app-root></app-root>
-  </div>
 </body>
+<style>
+  body {
+    background-image: url('assets/FondoCancha.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background-image: url('assets/FondoCanchaMobile.png');
+    }
+  }
+</style>
 </html>
