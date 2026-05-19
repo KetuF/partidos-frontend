@@ -14,7 +14,7 @@
           </div>
           @if (equipoSeleccionado?.id === equipo.id) {
             <div class="fixture-inline">
-              <app-fixture [partidos]="partidosEquipo"></app-fixture>
+              <app-fixture [partidos]="partidosEquipo" [mostrarFiltroFechas]="false"></app-fixture>
             </div>
           }
         }
