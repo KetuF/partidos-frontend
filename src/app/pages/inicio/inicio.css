@@ -94,6 +94,7 @@
   scrollbar-width: none;
   flex: 1;
   padding: 16px 4px;
+  
 }
 
 .carrusel::-webkit-scrollbar {
