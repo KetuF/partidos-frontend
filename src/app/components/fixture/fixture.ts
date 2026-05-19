@@ -12,6 +12,7 @@ import { Partido } from '../../interfaces/partido.interface';
 })
 export class Fixture implements OnChanges {
   @Input() partidos: Partido[] = [];
+  @Input() mostrarFiltroFechas: boolean = true;
   proximoPartidoId: number = -1;
   fechaSeleccionada: number = 0;
   fechasDisponibles: number[] = [];
@@ -32,10 +33,10 @@ export class Fixture implements OnChanges {
     this.FiltrarPorFecha();
   }
 
-FiltrarPorFecha(event?: any): void {
-  if (event) {
-    this.fechaSeleccionada = +event.target.value;
+  FiltrarPorFecha(event?: any): void {
+    if (event) {
+      this.fechaSeleccionada = +event.target.value;
+    }
+    this.partidosFiltrados = this.partidos.filter(p => p.numero_fecha === this.fechaSeleccionada);
   }
-  this.partidosFiltrados = this.partidos.filter(p => p.numero_fecha === this.fechaSeleccionada);
-}
 }

@@ -1,11 +1,13 @@
 <div class="fixture-wrapper">
   <div class="fixture-header">
     <h2 class="fixture-titulo">Fixture</h2>
-    <select class="fecha-select" (change)="FiltrarPorFecha($event)">
-      @for (fecha of fechasDisponibles; track fecha) {
-        <option [value]="fecha" [selected]="fecha === fechaSeleccionada">Fecha {{ fecha }}</option>
-      }
-    </select>
+    <div *ngIf="mostrarFiltroFechas">
+      <select class="fecha-select" (change)="FiltrarPorFecha($event)">
+        @for (fecha of fechasDisponibles; track fecha) {
+          <option [value]="fecha" [selected]="fecha === fechaSeleccionada">Fecha {{ fecha }}</option>
+        }
+      </select>
+    </div>
   </div>
   <div class="fixture-lista">
     @for (partido of partidosFiltrados; track partido.id) {

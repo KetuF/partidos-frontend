@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EquiposService } from '../../services/equiposService';
 import { PartidosService } from '../../services/partidosService';
@@ -20,6 +20,7 @@ export class Equipos implements OnInit {
   private partidosService = inject(PartidosService);
   private cdr = inject(ChangeDetectorRef);
 
+  @Input() mostrarFiltroFechas: boolean = false;
   equipos: Equipo[] = [];
   equipoSeleccionado: Equipo | null = null;
   partidosEquipo: Partido[] = [];
