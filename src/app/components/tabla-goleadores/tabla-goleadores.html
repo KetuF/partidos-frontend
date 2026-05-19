@@ -1,7 +1,7 @@
 <div class="goleadores-wrapper">
   <h2 class="goleadores-titulo">Tabla de Goleadores</h2>
   <div class="goleadores-lista">
-    @for (goleador of goleadores; track goleador.id; let i = $index) {
+    @for (goleador of goleadores.slice(0,5); track goleador.id; let i = $index) {
       <div class="goleador-row" [class.lider]="i === 0">
         <span class="goleador-pos">{{ i + 1 }}</span>
         <div class="goleador-info">
