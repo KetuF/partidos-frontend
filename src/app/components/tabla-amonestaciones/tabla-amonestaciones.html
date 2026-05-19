@@ -1,0 +1,24 @@
+<div class="amonestaciones-wrapper">
+  <h2 class="amonestaciones-titulo">Amonestados</h2>
+  @if (amonestaciones.length === 0) {
+    <div class="amonestaciones-vacio">
+      No hay jugadores amonestados
+    </div>
+  } @else {
+    <div class="amonestaciones-lista">
+      @for (amonestacion of amonestaciones; track amonestacion.id) {
+        <div class="amonestacion-row">
+          <div class="amonestacion-info">
+            <span class="amonestacion-nombre">{{ amonestacion.nombre_jugador }}</span>
+          </div>
+          <div class="amonestacion-tarjetas">
+            @for (tarjeta of GetTarjetas(amonestacion.amarillas); track $index) {
+              <div class="tarjeta-amarilla"></div>
+            }
+          </div>
+          <span class="amonestacion-cantidad">{{ amonestacion.amarillas }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>

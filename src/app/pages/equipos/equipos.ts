@@ -7,11 +7,14 @@ import { Partido } from '../../interfaces/partido.interface';
 import { Navbar } from '../../components/navbar/navbar';
 import { Fixture } from '../../components/fixture/fixture';
 import { Footer } from '../../components/footer/footer';
+import { AmonestacionesService } from '../../services/amonestacionesService';
+import { Amonestacion } from '../../interfaces/amonestaciones.interface';
+import { TablaAmonestaciones } from '../../components/tabla-amonestaciones/tabla-amonestaciones';
 
 @Component({
   selector: 'app-equipos',
   standalone: true,
-  imports: [CommonModule, Navbar, Fixture, Footer],
+  imports: [CommonModule, Navbar, Fixture, Footer, TablaAmonestaciones],
   templateUrl: './equipos.html',
   styleUrl: './equipos.css'
 })
@@ -23,6 +26,8 @@ export class Equipos implements OnInit {
   equipos: Equipo[] = [];
   equipoSeleccionado: Equipo | null = null;
   partidosEquipo: Partido[] = [];
+  amonestaciones: Amonestacion[] = [];
+  private amonestacionesService = inject(AmonestacionesService);
 
   ngOnInit(): void {
     this.equiposService.GetEquipos().subscribe({
@@ -48,6 +53,13 @@ export class Equipos implements OnInit {
         this.cdr.detectChanges();
       },
       error: (err) => console.error('Error al obtener partidos', err)
+    });
+    this.amonestacionesService.GetAmonestaciones(equipo.id).subscribe({
+      next: (data) => {
+        this.amonestaciones = data;
+        this.cdr.detectChanges();
+      },
+      error: (err) => console.error('Error al obtener amonestaciones', err)
     });
   }
 

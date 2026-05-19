@@ -1,0 +1,72 @@
+.amonestaciones-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.amonestaciones-titulo {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #111111;
+  padding: 14px 20px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.amonestaciones-vacio {
+  padding: 20px;
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+}
+
+.amonestaciones-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.amonestacion-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.amonestacion-row:last-child {
+  border-bottom: none;
+}
+
+.amonestacion-info {
+  flex: 1;
+}
+
+.amonestacion-nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.amonestacion-tarjetas {
+  display: flex;
+  gap: 3px;
+}
+
+.tarjeta-amarilla {
+  width: 14px;
+  height: 20px;
+  border-radius: 2px;
+  background: #f59e0b;
+}
+
+.amonestacion-cantidad {
+  font-size: 18px;
+  font-weight: 900;
+  color: #f59e0b;
+  min-width: 20px;
+  text-align: center;
+}
