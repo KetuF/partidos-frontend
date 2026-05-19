@@ -1,0 +1,119 @@
+.sanciones-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.sanciones-titulo {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #111111;
+  padding: 14px 20px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sanciones-vacio {
+  padding: 20px;
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+}
+
+.sanciones-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.sancion-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sancion-row:last-child {
+  border-bottom: none;
+}
+
+.sancion-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sancion-nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.sancion-equipo {
+  font-size: 12px;
+  color: #999999;
+}
+
+.sancion-tarjeta {
+  display: flex;
+  gap: 3px;
+}
+
+.tarjeta {
+  width: 14px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.tarjeta.amarilla {
+  background: #f59e0b;
+}
+
+.tarjeta.roja {
+  background: #ef4444;
+  width: 16px;
+  height: 22px;
+}
+
+.sancion-progreso {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.progreso-punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: 1.5px solid #d1d5db;
+}
+
+.progreso-punto.cumplido {
+  background: #111111;
+  border-color: #111111;
+}
+
+.sancion-restante {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+}
+
+.restante-numero {
+  font-size: 20px;
+  font-weight: 900;
+  color: #FF3B3B;
+}
+
+.restante-label {
+  font-size: 10px;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

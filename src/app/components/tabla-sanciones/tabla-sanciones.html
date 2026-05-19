@@ -1,0 +1,36 @@
+<div class="sanciones-wrapper">
+  <h2 class="sanciones-titulo">Sancionados</h2>
+  @if (sanciones.length === 0) {
+    <div class="sanciones-vacio">
+      No hay jugadores sancionados
+    </div>
+  } @else {
+    <div class="sanciones-lista">
+      @for (sancion of sanciones; track sancion.id) {
+        <div class="sancion-row">
+          <div class="sancion-info">
+            <span class="sancion-nombre">{{ sancion.nombre_jugador }}</span>
+            <span class="sancion-equipo">{{ sancion.equipo }}</span>
+          </div>
+          <div class="sancion-tarjeta">
+            @if (sancion.tipo === 'roja') {
+              <div class="tarjeta roja"></div>
+            } @else {
+              <div class="tarjeta amarilla"></div>
+              <div class="tarjeta amarilla"></div>
+            }
+          </div>
+          <div class="sancion-progreso">
+            @for (fecha of GetProgreso(sancion); track $index) {
+              <div class="progreso-punto" [class.cumplido]="$index < GetCumplidas(sancion)"></div>
+            }
+          </div>
+          <div class="sancion-restante">
+            <span class="restante-numero">{{ sancion.fechas_restantes }}</span>
+            <span class="restante-label">{{ sancion.fechas_restantes === 1 ? 'fecha' : 'fechas' }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

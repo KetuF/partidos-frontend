@@ -14,11 +14,14 @@ import { TablaPosiciones } from '../../components/tabla-posiciones/tabla-posicio
 import { Fixture } from '../../components/fixture/fixture';
 import { TablaGoleadores } from '../../components/tabla-goleadores/tabla-goleadores';
 import { Footer } from '../../components/footer/footer';
+import { Sancion } from '../../interfaces/sancion.interface';
+import { TablaSanciones } from '../../components/tabla-sanciones/tabla-sanciones';
+import { SancionesService } from '../../services/sancionesService';
 
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule, Navbar, TablaPosiciones, Fixture, TablaGoleadores, Footer],
+  imports: [CommonModule, Navbar, TablaPosiciones, Fixture, TablaGoleadores, Footer, TablaSanciones],
   templateUrl: './categoria.html',
   styleUrl: './categoria.css'
 })
@@ -29,12 +32,14 @@ export class Categoria implements OnInit {
   private goleadoresService = inject(GoleadoresService);
   private equiposService = inject(EquiposService);
   private cdr = inject(ChangeDetectorRef);
+  private sancionesService = inject(SancionesService);
 
   categoria: CategoriaInterface | null = null;
   partidos: Partido[] = [];
   goleadores: Goleador[] = [];
   equipos: Equipo[] = [];
   categoriaId: number = 0;
+  sanciones: Sancion[] = [];
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -68,6 +73,13 @@ export class Categoria implements OnInit {
     this.goleadoresService.GetGoleadoresPorCategoria(this.categoriaId).subscribe({
       next: (data) => {
         this.goleadores = data;
+        this.cdr.detectChanges();
+      }
+    });
+
+    this.sancionesService.GetSanciones(this.categoriaId).subscribe({
+      next: (data) => {
+        this.sanciones = data;
         this.cdr.detectChanges();
       }
     });
