@@ -27,7 +27,8 @@ export class Equipos implements OnInit {
   ngOnInit(): void {
     this.equiposService.GetEquipos().subscribe({
       next: (data) => {
-        this.equipos = data;
+        this.equipos = data.sort((a, b) =>
+        a.nombre.localeCompare(b.nombre));
         this.cdr.detectChanges();
       },
       error: (err) => console.error('Error al obtener equipos', err)
