@@ -121,6 +121,32 @@
   .partido-row {
     gap: 0px;
   }
+
+  .partido-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px;
+  }
+
+  .partido-equipos {
+    width: 100%;
+  }
+
+  .partido-fecha {
+    min-width: unset;
+    font-size: 11px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .proximo-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
 }
 
 .fixture-header {
