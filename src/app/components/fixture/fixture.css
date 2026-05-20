@@ -261,8 +261,8 @@
     position: relative;
     align-items: center;
     justify-content:space-between;
-    padding: 14px 16px 34px;
-    gap: 10px;
+    padding: 14px 16px 14px;
+    gap: 1px;
   }
 
   .partido-centro {
