@@ -116,7 +116,7 @@
 }
 
 .goleador-row.lider {
-  background: #fff8f8;
+  background: linear-gradient(90deg, #051228fa, #00398c2e, #051228fa);
   border-left: 4px solid #0064ff;
 }
 
@@ -149,28 +149,7 @@
 }
 
 .goleador-pos {
-  width: 42px;
-  height: 42px;
-
-  min-width: 42px;
-
-  border-radius: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,102,255,.20),
-      rgba(0,102,255,.08)
-    );
-
-  border: 1px solid rgba(74,132,255,.22);
-
   color: #ffffff;
-
   font-size: 15px;
   font-weight: 800;
 }
@@ -219,7 +198,6 @@
 @media (max-width: 600px) {
   .goleador-row {
     position: relative;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 14px 16px 34px;
