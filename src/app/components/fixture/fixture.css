@@ -112,6 +112,7 @@
 .fixture-header-texto {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .fixture-header-texto h2 {
@@ -123,6 +124,7 @@
   color: #ffffff;
 
   line-height: 1.1;
+  align-self: center;
 }
 
 .fixture-header-texto span {
@@ -132,6 +134,7 @@
   font-weight: 600;
 
   color: #2f7cff;
+  align-self: center;
 }
 
 .partido-fecha {
@@ -262,10 +265,6 @@
 
 @media (max-width: 600px) {
   .partido-row {
-    gap: 0px;
-  }
-  
-  .partido-row {
     position: relative;
     flex-direction: column;
     align-items: center;
@@ -296,6 +295,10 @@
   .proximo-badge {
     font-size: 8px;
     padding: 2px 4px;
+  }
+
+  .fixture-header {
+    gap: 16px;
   }
 }
 

@@ -1,5 +1,14 @@
 <div class="goleadores-wrapper">
-  <h2 class="goleadores-titulo">Tabla de Goleadores</h2>
+    <div class="goleadores-header">
+    <div class="goleadores-icono">
+      
+    </div>
+
+    <div class="goleadores-header-texto">
+      <h2>Goleadores</h2>
+      <span>Temporada 2026</span>
+    </div>
+  </div>
   <div class="goleadores-lista">
     @for (goleador of goleadores.slice(0,5); track goleador.id; let i = $index) {
       <div class="goleador-row" [class.lider]="i === 0">
