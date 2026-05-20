@@ -1,119 +1,339 @@
 .sanciones-wrapper {
-  background: #ffffff;
-  border-radius: 16px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(28, 6, 6, 0.96),
+      rgba(10, 2, 2, 0.98)
+    );
+
+  border: 1px solid rgba(255, 70, 70, 0.14);
+
+  border-radius: 24px;
+
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.03);
 }
 
-.sanciones-titulo {
-  font-size: 16px;
-  font-weight: 800;
-  color: #ffffff;
-  background: #ff0000;
-  padding: 14px 20px;
+/* HEADER */
+
+.sanciones-header {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 26px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 45, 45, 0.14),
+      rgba(255,255,255,.01)
+    );
+
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.sanciones-icono {
+  width: 74px;
+  height: 74px;
+
+  min-width: 74px;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 40, 40, .18),
+      rgba(255, 40, 40, .05)
+    );
+
+  border: 1px solid rgba(255,255,255,.04);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 10px 24px rgba(0,0,0,.28);
+}
+
+.sanciones-header-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.sanciones-header-texto h2 {
   margin: 0;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  color: #ffffff;
+
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.sanciones-header-texto span {
+  margin-top: 6px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #ff4d4d;
+}
+
+/* VACIO */
+
 .sanciones-vacio {
-  padding: 20px;
+  padding: 26px;
+
   text-align: center;
-  color: #999999;
+
+  color: #7f8da3;
+
   font-size: 14px;
 }
+
+/* LISTA */
 
 .sanciones-lista {
   display: flex;
   flex-direction: column;
+
+  gap: 16px;
+
+  padding: 22px;
 }
+
+/* ROW */
 
 .sancion-row {
+  position: relative;
+
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 12px 20px;
-  border-bottom: 1px solid #f0f0f0;
+
+  gap: 18px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(28, 6, 6, 0.98),
+      rgba(120, 0, 0, 0.14),
+      rgba(28, 6, 6, 0.98)
+    );
+
+  border: 1px solid rgba(255, 70, 70, 0.12);
+
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.03),
+    0 10px 24px rgba(0,0,0,.26);
+
+  transition:
+    transform .2s,
+    border-color .2s,
+    box-shadow .2s;
 }
 
-.sancion-row:last-child {
-  border-bottom: none;
+.sancion-row:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 70, 70, .28);
+
+  box-shadow:
+    0 0 24px rgba(255, 40, 40, .08),
+    0 12px 30px rgba(0,0,0,.3);
 }
+
+/* INFO */
 
 .sancion-info {
   display: flex;
   flex-direction: column;
+
   flex: 1;
+
+  min-width: 0;
 }
 
 .sancion-nombre {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
-  color: #111111;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sancion-equipo {
-  font-size: 12px;
-  color: #999999;
+  margin-top: 4px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #8793a8;
 }
+
+/* TARJETAS */
 
 .sancion-tarjeta {
   display: flex;
-  gap: 3px;
+  align-items: center;
+
+  gap: 5px;
 }
 
 .tarjeta {
-  width: 14px;
-  height: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 0 10px rgba(0,0,0,.2);
 }
 
 .tarjeta.amarilla {
-  background: #f0f50b;
+  width: 14px;
+  height: 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff94d,
+      #e8cf00
+    );
 }
 
 .tarjeta.roja {
-  background: #ef4444;
   width: 16px;
-  height: 22px;
+  height: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ff5a5a,
+      #d80000
+    );
 }
+
+/* PROGRESO */
 
 .sancion-progreso {
   display: flex;
-  gap: 4px;
   align-items: center;
+
+  gap: 6px;
 }
 
 .progreso-punto {
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
+
   border-radius: 50%;
-  background: #e5e7eb;
-  border: 1.5px solid #d1d5db;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1.5px solid rgba(255,255,255,.12);
+
+  transition:
+    background .2s,
+    border-color .2s,
+    transform .2s;
 }
 
 .progreso-punto.cumplido {
-  background: #111111;
-  border-color: #111111;
+  background: #ff3b3b;
+
+  border-color: #ff3b3b;
+
+  box-shadow:
+    0 0 10px rgba(255,59,59,.5);
+
+  transform: scale(1.05);
 }
+
+/* RESTANTE */
 
 .sancion-restante {
   display: flex;
   flex-direction: column;
+
   align-items: center;
-  min-width: 40px;
+
+  min-width: 48px;
 }
 
 .restante-numero {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 900;
-  color: #FF3B3B;
+
+  line-height: 1;
+
+  color: #ff4d4d;
+
+  text-shadow:
+    0 0 18px rgba(255,77,77,.35);
 }
 
 .restante-label {
+  margin-top: 4px;
+
   font-size: 10px;
-  color: #999999;
+  font-weight: 700;
+
+  color: #7f8da3;
+
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .sanciones-header {
+    padding: 20px;
+  }
+
+  .sanciones-icono {
+    width: 60px;
+    height: 60px;
+
+    min-width: 60px;
+  }
+
+  .sanciones-lista {
+    padding: 16px;
+  }
+
+  .sancion-row {
+    gap: 14px;
+
+    padding: 18px;
+  }
+
+  .sancion-nombre {
+    font-size: 15px;
+  }
+
+  .restante-numero {
+    font-size: 24px;
+  }
 }
