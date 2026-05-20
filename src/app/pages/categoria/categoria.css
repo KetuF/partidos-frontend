@@ -28,9 +28,6 @@
 
   z-index: 1000;
 
-  width: fit-content;
-
-  margin: 0 auto 22px auto;
   padding: 8px;
 
   display: flex;
@@ -89,4 +86,10 @@
 
 section {
   scroll-margin-top: 170px;
+}
+
+@media (max-width: 432px) {
+  .nav-item {
+    padding: 10px 6px;
+  }
 }
