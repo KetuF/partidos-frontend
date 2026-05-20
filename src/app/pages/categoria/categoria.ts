@@ -44,20 +44,38 @@ export class Categoria implements OnInit {
 
 
   ngAfterViewInit() {
+
     const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver(
       (entries) => {
+
+        let visibleSection = '';
+
+        let maxRatio = 0;
+
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.activeSection = entry.target.id;
-            this.cdr.detectChanges();
+
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+
+            maxRatio = entry.intersectionRatio;
+
+            visibleSection = entry.target.id;
           }
+
         });
+
+        if (visibleSection) {
+
+          this.activeSection = visibleSection;
+
+          this.cdr.detectChanges();
+        }
+
       },
       {
-        rootMargin: '-140px 0px -60% 0px',
-        threshold: 0
+        rootMargin: '-140px 0px -35% 0px',
+        threshold: [0.2, 0.35, 0.5, 0.7]
       }
     );
 
