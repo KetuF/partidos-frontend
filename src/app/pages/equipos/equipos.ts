@@ -47,6 +47,7 @@ export class Equipos implements OnInit {
       return;
     }
     this.equipoSeleccionado = equipo;
+    
     this.partidosService.GetPartidosPorEquipo(equipo.id).subscribe({
       next: (data) => {
         this.partidosEquipo = data;
@@ -54,6 +55,7 @@ export class Equipos implements OnInit {
       },
       error: (err) => console.error('Error al obtener partidos', err)
     });
+
     this.amonestacionesService.GetAmonestaciones(equipo.id).subscribe({
       next: (data) => {
         this.amonestaciones = data;

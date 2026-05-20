@@ -105,6 +105,7 @@
   height: 220px;
   transition: 0.3s ease;
   border-radius: 24px;
+  border-color: #0064ff;
   cursor: pointer;
 }
 
