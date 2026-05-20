@@ -168,22 +168,6 @@
   justify-content: flex-end;
 }
 
-.equipo-logo {
-  width: 52px;
-  height: 52px;
-
-  border-radius: 16px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.08),
-      rgba(255,255,255,.02)
-    );
-
-  border: 1px solid rgba(255,255,255,.05);
-}
-
 .equipo-info {
   display: flex;
   flex-direction: column;
@@ -270,7 +254,6 @@
 @media (max-width: 600px) {
   .partido-row {
     position: relative;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 14px 16px 34px;
