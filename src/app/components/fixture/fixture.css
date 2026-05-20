@@ -165,7 +165,7 @@
 }
 
 .lado-der {
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .equipo-info {
@@ -301,6 +301,10 @@
 
   .fixture-header {
     gap: 16px;
+  }
+
+  .fixture-header-texto span {
+    font-size: 12px;
   }
 }
 
