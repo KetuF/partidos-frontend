@@ -9,7 +9,7 @@ export class AmonestacionesService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}/amonestaciones`;
 
-  GetAmonestaciones(categoria_id: number): Observable<Amonestacion[]> {
-    return this.http.get<Amonestacion[]>(`${this.apiUrl}/amonestaciones/${categoria_id}`);
+  GetAmonestaciones(equipo_id: number): Observable<Amonestacion[]> {
+    return this.http.get<Amonestacion[]>(`${this.apiUrl}/equipo/${equipo_id}`);
   }
 }
