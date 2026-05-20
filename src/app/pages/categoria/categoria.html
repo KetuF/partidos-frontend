@@ -32,25 +32,29 @@
     </button>
   </div>
 
-  <section id="posiciones"></section>
+  <section id="posiciones">
     <app-tabla-posiciones [partidos]="partidos" [equipos]="equipos"></app-tabla-posiciones>
+  </section>
 
   <div class="banner-publicidad">
     <span>PUBLICIDAD</span>
   </div>
 
-  <section id="fixture"></section>
+  <section id="fixture">
     <app-fixture [partidos]="partidos"></app-fixture>
+  </section>
 
-  <section id="goleadores"></section>
+  <section id="goleadores">
     <app-tabla-goleadores [goleadores]="goleadores"></app-tabla-goleadores>
+  </section>
 
   <div class="banner-publicidad">
     <span>PUBLICIDAD</span>
   </div>
 
-  <section id="sanciones"></section>
+  <section id="sanciones">
     <app-tabla-sanciones [sanciones]="sanciones"></app-tabla-sanciones>
+  </section>
 
 </div>
 <app-footer></app-footer>

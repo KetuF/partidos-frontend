@@ -55,13 +55,14 @@ export class Categoria implements OnInit {
         });
       },
       {
-        threshold: 0.4
+        rootMargin: '-140px 0px -60% 0px',
+        threshold: 0
       }
     );
 
     sections.forEach(section => observer.observe(section));
   }
-  
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.categoriaId = +params['id'];

@@ -24,7 +24,7 @@
 
 .categorias-nav {
   position: sticky;
-  top: 70px;
+  top: 90px;
 
   z-index: 1000;
 
@@ -85,4 +85,8 @@
 
   box-shadow:
     0 0 16px rgba(47,124,255,.45);
+}
+
+section {
+  scroll-margin-top: 170px;
 }
