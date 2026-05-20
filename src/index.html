@@ -26,21 +26,44 @@
 </body>
 <style>
   body {
-    background-image: url('assets/FondoCancha.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
+</style>
 
-  @media (max-width: 768px) {
-    body {
-      background-image: url('assets/FondoCategoriasEquipos.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+<script>
+  function actualizarFondo() {
+    const ruta = window.location.pathname;
+
+    const esMobile = window.innerWidth <= 768;
+
+    if (esMobile) {
+
+      if (ruta.includes('/categoria')) {
+        document.body.style.backgroundImage =
+          "url('assets/FondoCategoriasEquipos.png')";
+      }
+
+      else if (ruta.includes('/inicio')) {
+        document.body.style.backgroundImage =
+          "url('assets/FondoCanchaMobile.png')";
+      }
+
+      else {
+        document.body.style.backgroundImage =
+          "url('assets/FondoCategoriasEquipos.png')";
+      }
+
+    } else {
+      document.body.style.backgroundImage =
+        "url('assets/FondoCancha.png')";
     }
   }
-</style>
+
+  actualizarFondo();
+
+  window.addEventListener('resize', actualizarFondo);
+</script>
 </html>
