@@ -6,16 +6,71 @@
       <h2 class="categoria-titulo">{{ categoria }}</h2>
       <div class="equipos-lista">
         @for (equipo of GetEquiposPorCategoria(categoria); track equipo.id) {
-          <div class="equipo-card" 
-               [class.seleccionado]="equipoSeleccionado?.id === equipo.id"
-               (click)="SeleccionarEquipo(equipo)">
+          <div class="equipo-card" [class.seleccionado]="equipoSeleccionado?.id === equipo.id"
+            (click)="SeleccionarEquipo(equipo)">
             <span class="equipo-nombre">{{ equipo.nombre }}</span>
             <span class="equipo-arrow">{{ equipoSeleccionado?.id === equipo.id ? '↑' : '↓' }}</span>
           </div>
           @if (equipoSeleccionado?.id === equipo.id) {
-            <div class="fixture-inline">
-              <app-fixture [partidos]="partidosEquipo" [mostrarFiltroFechas]="false"></app-fixture>
-              <app-tabla-amonestaciones [amonestaciones]="amonestaciones"></app-tabla-amonestaciones>
+            <div class="equipo-panel">
+              <div class="panel-tabs">
+                <button [class.active]="tabActiva==='fixture'" (click)="CambiarTab('fixture')">
+                  Fixture
+                </button>
+
+                <button [class.active]="tabActiva==='amonestados'" (click)="CambiarTab('amonestados')">
+                  Amonestados
+                </button>
+
+                <button [class.active]="tabActiva==='plantilla'" (click)="CambiarTab('plantilla')">
+                  Plantilla
+                </button>
+              </div>
+
+              <div class="panel-content">
+                @if(tabActiva==="fixture"){
+                  <app-fixture [partidos]="partidosEquipo" [mostrarFiltroFechas]="false">
+                  </app-fixture>
+                }
+
+                @if(tabActiva==="amonestados"){
+                  <div class="tabla-amarillas">
+                    @for(am of amonestaciones; track am.id){
+                      <div class="jugador-row">
+                        <div class="jugador-info">
+                          <span class="nombre">
+                            {{am.nombre_jugador}}
+                          </span>
+                        </div>
+                        <div class="tarjetas">
+                          @for(item of GetTarjetas(am.amarillas);track $index){
+                            <div class="amarilla"></div>
+                          }
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+                @if(tabActiva==="plantilla"){
+
+                  <div class="tabla-plantilla">
+
+                    @for(jugador of plantilla; track jugador.id){
+                      <div class="jugador-row">
+                        <div class="jugador-info">
+                          <span class="nombre">
+                            {{jugador.nombre}}
+                          </span>
+
+                          <span class="dni">
+                            DNI {{jugador.dni}}
+                          </span>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
             </div>
           }
         }

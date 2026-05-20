@@ -14,7 +14,7 @@ import { TablaAmonestaciones } from '../../components/tabla-amonestaciones/tabla
 @Component({
   selector: 'app-equipos',
   standalone: true,
-  imports: [CommonModule, Navbar, Fixture, Footer, TablaAmonestaciones],
+  imports: [CommonModule, Navbar, Fixture, Footer],
   templateUrl: './equipos.html',
   styleUrl: './equipos.css'
 })
@@ -22,12 +22,26 @@ export class Equipos implements OnInit {
   private equiposService = inject(EquiposService);
   private partidosService = inject(PartidosService);
   private cdr = inject(ChangeDetectorRef);
+  private amonestacionesService = inject(AmonestacionesService);
 
   equipos: Equipo[] = [];
   equipoSeleccionado: Equipo | null = null;
   partidosEquipo: Partido[] = [];
   amonestaciones: Amonestacion[] = [];
-  private amonestacionesService = inject(AmonestacionesService);
+  tabActiva: 'fixture' | 'amonestados' | 'plantilla' = 'fixture';
+
+  plantilla = [
+    {
+      id:1,
+      nombre:'Juan Pérez',
+      dni:'41234567'
+    },
+    {
+      id:2,
+      nombre:'Lucas Gómez',
+      dni:'39876543'
+    }
+  ];
 
   ngOnInit(): void {
     this.equiposService.GetEquipos().subscribe({
@@ -47,6 +61,8 @@ export class Equipos implements OnInit {
       return;
     }
     this.equipoSeleccionado = equipo;
+
+    this.tabActiva='fixture';
     
     this.partidosService.GetPartidosPorEquipo(equipo.id).subscribe({
       next: (data) => {
@@ -71,5 +87,13 @@ export class Equipos implements OnInit {
 
   GetEquiposPorCategoria(categoria: string): Equipo[] {
     return this.equipos.filter(e => e.categoria === categoria);
+  }
+
+  CambiarTab(tab:'fixture'|'amonestados'|'plantilla'){
+    this.tabActiva = tab;
+  }
+
+  GetTarjetas(cantidad:number){
+    return Array(cantidad);
   }
 }
