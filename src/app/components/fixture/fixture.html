@@ -47,6 +47,11 @@
             {{ partido.fecha | date: 'dd/MM' }} ·
             {{ partido.hora | slice:0:5 }} hs
           </span>
+          @if (partido.id === proximoPartidoId) {
+            <div class="proximo-badge">
+              PRÓXIMO
+            </div>
+          }
         </div>
 
         <div class="equipo lado-der">
@@ -58,12 +63,6 @@
 
           <div class="equipo-logo"></div>
         </div>
-
-        @if (partido.id === proximoPartidoId) {
-          <div class="proximo-badge">
-            PRÓXIMO
-          </div>
-        }
       </div>
     }
 </div>
