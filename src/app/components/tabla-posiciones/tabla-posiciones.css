@@ -225,3 +225,8 @@
   align-items: center;
   gap: 4px;
 }
+
+.pos-cell {
+  vertical-align: middle;
+  text-align: center;
+}

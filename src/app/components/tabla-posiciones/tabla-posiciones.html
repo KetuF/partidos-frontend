@@ -19,7 +19,11 @@
       <tbody>
         @for (equipo of posiciones; track equipo.nombre; let i = $index) {
           <tr [class.lider]="i === 0">
-            <td class="pos-num">{{ i + 1 }}</td>
+            <td class="pos-cell">
+              <div class="pos-num">
+                {{ i + 1 }}
+              </div>
+            </td>
             <td class="equipo-nombre">{{ equipo.nombre }}</td>
             <td>{{ equipo.PJ }}</td>
             <td>{{ equipo.PG }}</td>
