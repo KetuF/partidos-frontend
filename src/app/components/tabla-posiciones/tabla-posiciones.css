@@ -137,53 +137,8 @@
   color: #ffffff;
 }
 
-/* CIRCULO POSICION */
-
 .pos-num {
-  width: 36px;
-  height: 36px;
-
-  min-width: 36px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,102,255,.35),
-      rgba(0,102,255,.12)
-    );
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
-
   font-weight: 800;
-
-  color: #ffffff;
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-  box-shadow:
-    inset 0 1px 2px rgba(255,255,255,0.08),
-    0 4px 10px rgba(0,0,0,.25);
-}
-
-/* CIRCULO DEL LIDER */
-
-.lider .pos-num {
-  background:
-    linear-gradient(
-      180deg,
-      #2f7cff,
-      #005eff
-    );
-
-  box-shadow:
-    0 0 14px rgba(47,124,255,.9),
-    0 0 30px rgba(47,124,255,.35);
 }
 
 /* PUNTOS */
@@ -224,9 +179,4 @@
   display: flex;
   align-items: center;
   gap: 4px;
-}
-
-.pos-cell {
-  vertical-align: middle;
-  text-align: center;
 }
