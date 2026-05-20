@@ -3,7 +3,6 @@
 }
 
 .navbar-wrapper {
-  position: sticky;
   top: 0;
   z-index: 100;
   background: #111111;

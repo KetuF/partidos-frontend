@@ -72,17 +72,9 @@
 }
 
 .nav-item.active {
-  background:
-    linear-gradient(
-      180deg,
-      #2f7cff,
-      #005eff
-    );
-
   color: white;
-
   box-shadow:
-    0 0 16px rgba(47,124,255,.45);
+    0 0 16px rgba(255, 255, 255, 0.45);
 }
 
 section {

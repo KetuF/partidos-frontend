@@ -24,6 +24,7 @@
 .sanciones-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   gap: 18px;
 
@@ -78,7 +79,6 @@
 
   color: #ffffff;
 
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
