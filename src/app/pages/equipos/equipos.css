@@ -7,95 +7,63 @@
 /* TITULO CATEGORIA */
 
 .categoria-titulo{
-
+  margin-top: 15px;
   font-size:13px;
-
   font-weight:800;
-
   color:rgba(255,255,255,.6);
-
   text-transform:uppercase;
-
   letter-spacing:2px;
-
   padding-left:10px;
-
   position:relative;
 
 }
 
 .categoria-titulo::before{
-
   content:"";
-
   position:absolute;
-
   left:0;
   top:50%;
-
   transform:translateY(-50%);
-
   width:4px;
   height:18px;
-
   border-radius:10px;
-
   background:
-
   linear-gradient(
     180deg,
     #2f7cff,
     #005eff
   );
-
   box-shadow:
   0 0 10px rgba(47,124,255,.5);
-
 }
-
-/* LISTA */
 
 .equipos-lista{
   display:flex;
   flex-direction:column;
-
   gap:14px;
+  padding: 10px;
 }
 
-/* CARD */
-
 .equipo-card{
-
   position:relative;
-
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
-
   padding:18px 22px;
-
   border-radius:22px;
-
   cursor:pointer;
-
   overflow:hidden;
-
   background:
   linear-gradient(
     180deg,
     rgba(255,255,255,.96),
     rgba(244,247,255,.98)
   );
-
   border:
   1px solid rgba(255,255,255,.8);
-
   box-shadow:
     0 10px 24px rgba(0,0,0,.18),
     inset 0 1px 0 rgba(255,255,255,.9);
-
   transition:
   transform .25s,
   box-shadow .25s,
@@ -103,112 +71,70 @@
 }
 
 .equipo-card::before{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   opacity:0;
-
   background:
   linear-gradient(
       90deg,
       rgba(0,102,255,.06),
       transparent
   );
-
   transition:.3s;
-
 }
 
-/* HOVER */
-
 .equipo-card:hover{
-
   transform:translateY(-2px);
-
   box-shadow:
       0 14px 30px rgba(0,0,0,.22);
-
 }
 
 .equipo-card:hover::before{
-
   opacity:1;
-
 }
 
-/* SELECCIONADO */
-
 .equipo-card.seleccionado{
-
   border-color:#2f7cff;
-
   box-shadow:
       0 0 0 1px rgba(47,124,255,.2),
       0 0 30px rgba(47,124,255,.22);
-
 }
 
 .equipo-card.seleccionado::before{
-
   opacity:1;
-
 }
-
-/* NOMBRE */
 
 .equipo-nombre{
-
   font-size:16px;
-
   font-weight:800;
-
   color:#101827;
-
 }
 
-/* FLECHA */
-
 .equipo-arrow{
-
   width:36px;
   height:36px;
-
   min-width:36px;
-
   border-radius:50%;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   background:
-
   linear-gradient(
       180deg,
       #2f7cff,
       #005eff
   );
-
   color:white;
-
   font-size:14px;
-
   box-shadow:
       0 6px 14px rgba(47,124,255,.35);
-
   transition:
       transform .3s;
 }
 
 .equipo-card.seleccionado .equipo-arrow{
-
   transform:rotate(180deg);
-
 }
 
 .equipo-panel {
