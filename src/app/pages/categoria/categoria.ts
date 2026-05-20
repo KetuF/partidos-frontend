@@ -51,6 +51,7 @@ export class Categoria implements OnInit {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             this.activeSection = entry.target.id;
+            this.cdr.detectChanges();
           }
         });
       },
@@ -108,6 +109,9 @@ export class Categoria implements OnInit {
   }
 
   scrollTo(id: string) {
+
+    this.activeSection = id;
+    this.cdr.detectChanges();
     const element = document.getElementById(id);
 
     if (element) {
@@ -115,6 +119,7 @@ export class Categoria implements OnInit {
         behavior: 'smooth',
         block: 'start'
       });
+
     }
   }
 }
