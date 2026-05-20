@@ -40,7 +40,28 @@ export class Categoria implements OnInit {
   equipos: Equipo[] = [];
   categoriaId: number = 0;
   sanciones: Sancion[] = [];
+  activeSection = 'posiciones';
 
+
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.activeSection = entry.target.id;
+          }
+        });
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  }
+  
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.categoriaId = +params['id'];
@@ -83,5 +104,16 @@ export class Categoria implements OnInit {
         this.cdr.detectChanges();
       }
     });
+  }
+
+  scrollTo(id: string) {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
 }
