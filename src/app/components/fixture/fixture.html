@@ -1,6 +1,13 @@
 <div class="fixture-wrapper">
   <div class="fixture-header">
-    <h2 class="fixture-titulo">Fixture</h2>
+    <div class="fixture-icono">
+      
+    </div>
+
+    <div class="fixture-header-texto">
+      <h2>Fixture</h2>
+      <span>Temporada 2026</span>
+    </div>
     <div *ngIf="mostrarFiltroFechas">
       <select class="fecha-select" (change)="FiltrarPorFecha($event)">
         @for (fecha of fechasDisponibles; track fecha) {
@@ -11,29 +18,52 @@
   </div>
   <div class="fixture-lista">
     @for (partido of partidosFiltrados; track partido.id) {
-      <div class="partido-row" [class.proximo]="partido.id === proximoPartidoId" [class.jugado]="partido.jugado">
-        <div class="partido-fecha">
-          {{ partido.fecha | date: 'dd/MM' }} {{ partido.hora | slice:0:5 }}hs
-          @if (partido.id === proximoPartidoId) {
-            <div class="proximo-badge">PRÓXIMO</div>
-          }
-        </div>
-        <div class="partido-equipos">
-          <span class="equipo" [class.ganador]="partido.jugado && partido.goles_local > partido.goles_visitante">
-            {{ partido.equipo_local }}
-          </span>
-          <div class="resultado">
-            @if (partido.jugado) {
-              <span class="goles">{{ partido.goles_local }} - {{ partido.goles_visitante }}</span>
-            } @else {
-              <span class="vs">vs</span>
-            }
+      <div  
+        class="partido-row"
+        [class.proximo]="partido.id === proximoPartidoId"
+        [class.jugado]="partido.jugado"
+      >
+
+        <div class="equipo lado-izq">
+          <div class="equipo-logo"></div>
+
+          <div class="equipo-info">
+            <span class="nombre">
+              {{ partido.equipo_local }}
+            </span>
           </div>
-          <span class="equipo derecha" [class.ganador]="partido.jugado && partido.goles_visitante > partido.goles_local">
-            {{ partido.equipo_visitante }}
+        </div>
+
+        <div class="partido-centro">
+          @if (partido.jugado) {
+            <span class="resultado-final">
+              {{ partido.goles_local }} - {{ partido.goles_visitante }}
+            </span>
+          } @else {
+            <span class="vs">VS</span>
+          }
+
+          <span class="fecha">
+            {{ partido.fecha | date: 'dd/MM' }} ·
+            {{ partido.hora | slice:0:5 }} hs
           </span>
         </div>
+
+        <div class="equipo lado-der">
+          <div class="equipo-info derecha">
+            <span class="nombre">
+              {{ partido.equipo_visitante }}
+            </span>
+          </div>
+
+          <div class="equipo-logo"></div>
+        </div>
+
+        @if (partido.id === proximoPartidoId) {
+          <div class="proximo-badge">
+            PRÓXIMO
+          </div>
+        }
       </div>
     }
-  </div>
 </div>
