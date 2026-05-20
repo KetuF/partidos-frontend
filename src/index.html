@@ -22,24 +22,23 @@
 </head>
 </head>
 <body>
-    <app-root></app-root>
+  <div class="fixed-bg"></div>
+  <app-root></app-root>
 </body>
 <style>
-  body {
+  .fixed-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     background-image: url('assets/FondoCancha.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
   }
 
   @media (max-width: 768px) {
-    body {
+    .fixed-bg {
       background-image: url('assets/FondoCanchaMobile.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
     }
   }
 </style>
