@@ -28,52 +28,104 @@
               </div>
 
               <div class="panel-content">
+
                 @if(tabActiva==="fixture"){
-                  <app-fixture [partidos]="partidosEquipo" [mostrarFiltroFechas]="false">
+
+                  <app-fixture
+                    [partidos]="partidosEquipo"
+                    [mostrarFiltroFechas]="false">
                   </app-fixture>
+
                 }
 
-                @if (amonestaciones.length === 0) {
-                  <div class="sanciones-vacio">
-                    No hay jugadores sancionados
-                  </div>
-                } @else {
+
+                @if(tabActiva==="amonestados"){
+
+                  @if (amonestaciones.length === 0) {
+
+                    <div class="amonestados-vacio">
+                      No hay jugadores amonestados
+                    </div>
+
+                  } @else {
+
                     <div class="tabla-amarillas">
+
                       @for(am of amonestaciones; track am.id){
+
                         <div class="jugador-row">
+
                           <div class="jugador-info">
+
                             <span class="nombre">
                               {{am.nombre_jugador}}
                             </span>
+
+                            <span class="dni">
+                              {{am.equipo}}
+                            </span>
+
                           </div>
+
                           <div class="tarjetas">
-                            @for(item of GetTarjetas(am.amarillas);track $index){
+
+                            @for(item of GetTarjetas(am.amarillas); track $index){
+
                               <div class="amarilla"></div>
+
                             }
+
                           </div>
+
                         </div>
+
                       }
+
                     </div>
+
                   }
+
+                }
+
+
                 @if(tabActiva==="plantilla"){
 
-                  <div class="tabla-plantilla">
+                  @if(plantilla.length===0){
 
-                    @for(jugador of plantilla; track jugador.id){
-                      <div class="jugador-row">
-                        <div class="jugador-info">
-                          <span class="nombre">
-                            {{jugador.nombre}}
-                          </span>
+                    <div class="sanciones-vacio">
+                      No hay jugadores cargados
+                    </div>
 
-                          <span class="dni">
-                            DNI {{jugador.dni}}
-                          </span>
+                  } @else {
+
+                    <div class="tabla-plantilla">
+
+                      @for(jugador of plantilla; track jugador.id){
+
+                        <div class="jugador-row">
+
+                          <div class="jugador-info">
+
+                            <span class="nombre">
+                              {{jugador.nombre}}
+                            </span>
+
+                            <span class="dni">
+                              DNI {{jugador.dni}}
+                            </span>
+
+                          </div>
+
                         </div>
-                      </div>
-                    }
-                  </div>
+
+                      }
+
+                    </div>
+
+                  }
+
                 }
+
               </div>
             </div>
           }
