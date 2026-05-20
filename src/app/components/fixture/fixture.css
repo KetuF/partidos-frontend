@@ -252,12 +252,21 @@
 }
 
 @media (max-width: 600px) {
+  .nombre {
+    font-size: 12px;
+    font-weight: 800;
+  }
   .partido-row {
+    display: flex;
     position: relative;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     padding: 14px 16px 34px;
     gap: 10px;
+  }
+
+  .partido-centro {
+    min-width: 96px;
   }
 
   .partido-equipos {
@@ -278,6 +287,12 @@
     font-size: 11px;
     color: #999999;
   }
+
+  
+  .fecha {
+    font-size: 10px;
+  }
+
 
   .proximo-badge {
     font-size: 8px;
