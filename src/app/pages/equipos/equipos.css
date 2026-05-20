@@ -68,7 +68,7 @@
   background:
     linear-gradient(180deg,
       rgba(5, 18, 40, .98),
-      rgba(0, 57, 140, .12));
+      rgba(0, 56, 140, 0.897));
   border-radius: 30px;
   margin-top: 16px;
   overflow: hidden;
