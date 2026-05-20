@@ -4,6 +4,7 @@
 
   <div class="categorias-nav">
     <button
+      class="nav-item"
       [class.active]="activeSection === 'posiciones'"
       (click)="scrollTo('posiciones')">
       Posiciones
@@ -11,46 +12,45 @@
 
     <button
       class="nav-item"
+      [class.active]="activeSection === 'fixture'"
       (click)="scrollTo('fixture')">
       Fixture
     </button>
 
     <button
       class="nav-item"
+      [class.active]="activeSection === 'goleadores'"
       (click)="scrollTo('goleadores')">
       Goleadores
     </button>
 
     <button
       class="nav-item"
+      [class.active]="activeSection === 'sanciones'"
       (click)="scrollTo('sanciones')">
       Sansiones
     </button>
   </div>
 
-  <section id="posiciones">
+  <section id="posiciones"></section>
     <app-tabla-posiciones [partidos]="partidos" [equipos]="equipos"></app-tabla-posiciones>
-  </section>
 
   <div class="banner-publicidad">
     <span>PUBLICIDAD</span>
   </div>
 
-  <section id="ficture">
+  <section id="fixture"></section>
     <app-fixture [partidos]="partidos"></app-fixture>
-  </section>
 
-  <section id="goleadores">
+  <section id="goleadores"></section>
     <app-tabla-goleadores [goleadores]="goleadores"></app-tabla-goleadores>
-  </section>
 
   <div class="banner-publicidad">
     <span>PUBLICIDAD</span>
   </div>
 
-  <section id="posiciones">
+  <section id="sanciones"></section>
     <app-tabla-sanciones [sanciones]="sanciones"></app-tabla-sanciones>
-  </section>
 
 </div>
 <app-footer></app-footer>
