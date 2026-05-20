@@ -60,6 +60,10 @@
     0 10px 24px rgba(0,0,0,.28);
 }
 
+.fixture-icono img{
+  width: 100%;
+}
+
 .fixture-lista {
   display: flex;
   flex-direction: column;

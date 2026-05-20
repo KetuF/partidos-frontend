@@ -66,6 +66,10 @@
     0 10px 24px rgba(0,0,0,.28);
 }
 
+.sanciones-icono img{
+  width: 100%;
+}
+
 .sanciones-header-texto {
   display: flex;
   flex-direction: column;
