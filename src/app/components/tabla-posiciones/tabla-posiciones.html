@@ -30,7 +30,7 @@
           <tr [class.lider]="i === 0">
             <td class="pos-num">{{ i + 1 }}</td>
             <td class="equipo-nombre">
-              <img class="escudo-equipo" [src]="equipo.escudo || 'assets/escudo-default.png'" alt="" (error)="onImgError($event)" class="escudo">
+              <img class="escudo-equipo" [src]="equipo.escudo || 'assets/escudo-default.png'" alt="" (error)="onImgError($event)">
               <span>
                 {{ equipo.nombre }}
               </span>

@@ -165,6 +165,6 @@ export class Equipos implements OnInit {
 
   onImgError(event: Event){
     const img = event.target as HTMLImageElement;
-    img.src='assets/escudos/escudo-default.png';
+    img.src='assets/escudo-default.png';
   }
 }
