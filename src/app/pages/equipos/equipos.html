@@ -8,30 +8,38 @@
 
   <div class="categoria-header">
 
-    <button
-      class="cat-btn"
-      (click)="CategoriaAnterior()">
+    <div class="categoria-titulo-wrapper">
 
-      ‹
+        <h2 class="categoria-titulo">
+          {{CategoriaActual()}}
+        </h2>
 
-    </button>
+        <span class="categoria-sub">
+          {{GetEquiposPorCategoria(CategoriaActual()).length}}
+          equipos
+        </span>
 
-
-    <h2 class="categoria-titulo">
-
-      {{CategoriaActual()}}
-
-    </h2>
+    </div>
 
 
-    <button
-      class="cat-btn"
-      (click)="CategoriaSiguiente()">
+    <div class="categoria-actions">
 
-      ›
+        <button
+        class="cat-btn"
+        (click)="CategoriaAnterior()">
 
-    </button>
+            ‹
 
+        </button>
+
+        <button
+        class="cat-btn"
+        (click)="CategoriaSiguiente()">
+
+            ›
+
+        </button>
+    </div>
   </div>
 
 

@@ -115,8 +115,6 @@ export class Equipos implements OnInit {
     ];
   }
 
-
-
   CategoriaSiguiente(){
     const categorias=
     this.GetCategorias();
@@ -145,8 +143,6 @@ export class Equipos implements OnInit {
     this.CerrarEquipo();
   }
 
-
-
   GetEquiposPorCategoria(categoria:string):Equipo[]{
     return this.equipos.filter(
       e=>e.categoria===categoria
@@ -166,5 +162,4 @@ export class Equipos implements OnInit {
     this.partidosEquipo=[];
     this.amonestaciones=[];
   }
-
 }
