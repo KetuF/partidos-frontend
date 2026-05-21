@@ -21,7 +21,6 @@ margin:0;
 padding:0;
 width:100%;
 min-height:100%;
-background:#081321;
 overflow-x:hidden;
 }
 
@@ -35,5 +34,5 @@ padding-right:env(safe-area-inset-right);
 app-root{
   display:block;
   min-height:100vh;
-  background:#081321;
+  background:#000000;
 }
