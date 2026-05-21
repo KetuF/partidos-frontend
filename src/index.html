@@ -19,51 +19,28 @@
     gtag('js', new Date());
     gtag('config', 'G-4S40HX573N');
   </script>
+  <meta name="theme-color" content="#081321">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 </head>
 <body>
     <app-root></app-root>
 </body>
 <style>
-  body {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
-</style>
-
-<script>
-  function actualizarFondo() {
-    const ruta = window.location.pathname;
-
-    const esMobile = window.innerWidth <= 768;
-
-    if (esMobile) {
-
-      if (ruta.includes('/categoria')) {
-        document.body.style.backgroundImage =
-          "url('assets/FondoCategoriasEquipos.png')";
-      }
-
-      else if (ruta.includes('/inicio')) {
-        document.body.style.backgroundImage =
-          "url('assets/FondoCanchaMobile.png')";
-      }
-
-      else {
-        document.body.style.backgroundImage =
-          "url('assets/FondoCategoriasEquipos.png')";
-      }
-
-    } else {
-      document.body.style.backgroundImage =
-        "url('assets/FondoCancha.png')";
+  body { 
+    background-image: url('assets/FondoCancha.png');
+    background-size: cover; background-position: center;
+    background-attachment: fixed; background-repeat: no-repeat;
+    }
+  @media (max-width: 768px){ 
+    body { 
+      background-image: url('assets/FondoCanchaMobile.png');
+      background-size: cover;
+      background-position:center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
   }
-
-  actualizarFondo();
-
-  window.addEventListener('resize', actualizarFondo);
-</script>
+</style>
 </html>
