@@ -5,6 +5,7 @@ import { Equipo } from '../../interfaces/equipo.interface';
 
 interface PosicionEquipo {
   nombre: string;
+  escudo: string;
   PJ: number;
   PG: number;
   PE: number;
@@ -36,7 +37,7 @@ export class TablaPosiciones implements OnChanges {
     const mapa: { [nombre: string]: PosicionEquipo } = {};
 
     this.equipos.forEach(e => {
-      mapa[e.nombre] = { nombre: e.nombre, PJ: 0, PG: 0, PE: 0, PP: 0, GF: 0, GC: 0, DG: 0, PTS: 0 };
+      mapa[e.nombre] = { nombre: e.nombre, escudo: e.escudo, PJ: 0, PG: 0, PE: 0, PP: 0, GF: 0, GC: 0, DG: 0, PTS: 0 };
     });
 
     this.partidos.filter(p => p.jugado).forEach(p => {

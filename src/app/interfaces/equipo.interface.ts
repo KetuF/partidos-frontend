@@ -3,4 +3,6 @@ export interface Equipo {
   nombre: string;
   categoria: string;
   categoria_id: number;
+
+  escudo:string;
 }

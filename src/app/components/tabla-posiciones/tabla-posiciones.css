@@ -248,3 +248,21 @@
     color: #ffffff;
   }
 }
+
+.equipo-nombre{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:180px;
+}
+
+.escudo-equipo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  flex-shrink:0;
+  filter:
+    drop-shadow(
+      0 0 8px rgba(255,255,255,.15)
+    );
+}
