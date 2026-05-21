@@ -29,17 +29,19 @@ export class Equipos implements OnInit {
   partidosEquipo: Partido[] = [];
   amonestaciones: Amonestacion[] = [];
   tabActiva: 'fixture' | 'amonestados' | 'plantilla' = 'fixture';
+  categoriaActualIndex = 0;
+  categorias: string[] = [];
 
   plantilla = [
     {
-      id:1,
-      nombre:'Juan Pérez',
-      dni:'41234567'
+      id: 1,
+      nombre: 'Juan Pérez',
+      dni: '41234567'
     },
     {
-      id:2,
-      nombre:'Lucas Gómez',
-      dni:'39876543'
+      id: 2,
+      nombre: 'Lucas Gómez',
+      dni: '39876543'
     }
   ];
 
@@ -47,11 +49,12 @@ export class Equipos implements OnInit {
     this.equiposService.GetEquipos().subscribe({
       next: (data) => {
         this.equipos = data.sort((a, b) =>
-        a.nombre.localeCompare(b.nombre));
+          a.nombre.localeCompare(b.nombre));
         this.cdr.detectChanges();
       },
       error: (err) => console.error('Error al obtener equipos', err)
     });
+    this.categorias = this.GetCategorias();
   }
 
   SeleccionarEquipo(equipo: Equipo): void {
@@ -62,8 +65,8 @@ export class Equipos implements OnInit {
     }
     this.equipoSeleccionado = equipo;
 
-    this.tabActiva='fixture';
-    
+    this.tabActiva = 'fixture';
+
     this.partidosService.GetPartidosPorEquipo(equipo.id).subscribe({
       next: (data) => {
         this.partidosEquipo = data;
@@ -89,11 +92,47 @@ export class Equipos implements OnInit {
     return this.equipos.filter(e => e.categoria === categoria);
   }
 
-  CambiarTab(tab:'fixture'|'amonestados'|'plantilla'){
+  CambiarTab(tab: 'fixture' | 'amonestados' | 'plantilla') {
     this.tabActiva = tab;
   }
 
-  GetTarjetas(cantidad:number){
+  GetTarjetas(cantidad: number) {
     return Array(cantidad);
+  }
+
+  CategoriaActual() {
+    return this.categorias[
+      this.categoriaActualIndex
+    ];
+  }
+
+  CategoriaSiguiente() {
+
+    if (this.categoriaActualIndex < this.categorias.length - 1) {
+      this.categoriaActualIndex++;
+    } else {
+      this.categoriaActualIndex = 0;
+    }
+    this.CerrarEquipo();
+  }
+
+  CategoriaAnterior() {
+    if (
+      this.categoriaActualIndex > 0
+    ) {
+
+      this.categoriaActualIndex--;
+
+    } else {
+
+      this.categoriaActualIndex =
+        this.categorias.length - 1;
+
+    }
+    this.CerrarEquipo();
+  }
+
+  CerrarEquipo(){
+    this.equipoSeleccionado=null;
   }
 }

@@ -2,201 +2,180 @@
 
 <div class="equipos-wrapper">
 
-  @for (categoria of GetCategorias(); track categoria) {
+@if(CategoriaActual()){
 
-    <div class="categoria-seccion">
+<div class="categoria-seccion">
 
-      <h2 class="categoria-titulo">
-        {{ categoria }}
-      </h2>
+  <div class="categoria-header">
 
-      <div class="equipos-grid">
+    <button
+      class="cat-btn"
+      (click)="CategoriaAnterior()">
 
-        @for (equipo of GetEquiposPorCategoria(categoria); track equipo.id) {
+      ‹
 
-          <div class="equipo-item">
+    </button>
 
-            <div
-              class="equipo-card"
-              [class.seleccionado]="equipoSeleccionado?.id===equipo.id"
-              (click)="SeleccionarEquipo(equipo)">
 
-              <div class="equipo-izq">
+    <h2 class="categoria-titulo">
 
-                <div class="equipo-logo">
+      {{CategoriaActual()}}
 
-                  <!-- despues acá pones el escudo -->
-                  🛡️
+    </h2>
 
-                </div>
 
-                <div class="equipo-info-card">
+    <button
+      class="cat-btn"
+      (click)="CategoriaSiguiente()">
 
-                  <span class="equipo-nombre">
-                    {{ equipo.nombre }}
-                  </span>
+      ›
 
-                  <span class="equipo-sub">
-                    Veteranos +45
-                  </span>
+    </button>
 
-                </div>
+  </div>
+
+
+  <div class="equipos-grid">
+
+    @for (
+      equipo of GetEquiposPorCategoria(CategoriaActual());
+      track equipo.id
+    ) {
+
+    <div class="equipo-item">
+
+      <div
+        class="equipo-card"
+        [class.seleccionado]="equipoSeleccionado?.id===equipo.id"
+        (click)="SeleccionarEquipo(equipo)">
+
+        <div class="equipo-izq">
+
+          <div class="equipo-logo">
+
+            🛡️
+
+          </div>
+
+          <div class="equipo-info-card">
+
+            <span class="equipo-nombre">
+
+              {{equipo.nombre}}
+
+            </span>
+
+            <span class="equipo-sub">
+
+              {{CategoriaActual()}}
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="equipo-arrow">
+
+          {{equipoSeleccionado?.id===equipo.id ? '↑':'↓'}}
+
+        </div>
+
+      </div>
+
+
+
+      @if (equipoSeleccionado?.id===equipo.id){
+
+      <div class="equipo-panel">
+
+        <div class="panel-tabs">
+
+          <button
+            [class.active]="tabActiva==='fixture'"
+            (click)="CambiarTab('fixture')">
+
+            Fixture
+
+          </button>
+
+
+          <button
+            [class.active]="tabActiva==='amonestados'"
+            (click)="CambiarTab('amonestados')">
+
+            Amonestados
+
+          </button>
+
+
+          <button
+            [class.active]="tabActiva==='plantilla'"
+            (click)="CambiarTab('plantilla')">
+
+            Plantilla
+
+          </button>
+
+        </div>
+
+
+        <div class="panel-content">
+
+
+          @if(tabActiva==="fixture"){
+
+          <app-fixture
+            [partidos]="partidosEquipo"
+            [mostrarFiltroFechas]="false">
+
+          </app-fixture>
+
+          }
+
+
+
+          @if(tabActiva==="amonestados"){
+
+          @if(amonestaciones.length===0){
+
+          <div class="amonestados-vacio">
+
+            No hay jugadores amonestados
+
+          </div>
+
+          } @else {
+
+          <div class="tabla-amarillas">
+
+            @for(am of amonestaciones; track am.id){
+
+            <div class="jugador-row">
+
+              <div class="jugador-info">
+
+                <span class="nombre">
+
+                  {{am.nombre_jugador}}
+
+                </span>
+
+                <span class="dni">
+
+                  {{am.equipo}}
+
+                </span>
 
               </div>
 
-              <div class="equipo-arrow">
 
-                {{equipoSeleccionado?.id===equipo.id ? '↑' : '↓'}}
+              <div class="tarjetas">
 
-              </div>
+                @for(item of GetTarjetas(am.amarillas); track $index){
 
-            </div>
-
-
-            @if (equipoSeleccionado?.id===equipo.id){
-
-            <div class="equipo-panel">
-
-              <div class="panel-tabs">
-
-                <button
-                  [class.active]="tabActiva==='fixture'"
-                  (click)="CambiarTab('fixture')">
-
-                  Fixture
-
-                </button>
-
-                <button
-                  [class.active]="tabActiva==='amonestados'"
-                  (click)="CambiarTab('amonestados')">
-
-                  Amonestados
-
-                </button>
-
-                <button
-                  [class.active]="tabActiva==='plantilla'"
-                  (click)="CambiarTab('plantilla')">
-
-                  Plantilla
-
-                </button>
-
-              </div>
-
-
-              <div class="panel-content">
-
-                @if(tabActiva==="fixture"){
-
-                  <app-fixture
-                    [partidos]="partidosEquipo"
-                    [mostrarFiltroFechas]="false">
-                  </app-fixture>
-
-                }
-
-
-
-                @if(tabActiva==="amonestados"){
-
-                  @if(amonestaciones.length===0){
-
-                    <div class="amonestados-vacio">
-
-                      No hay jugadores amonestados
-
-                    </div>
-
-                  } @else {
-
-                    <div class="tabla-amarillas">
-
-                      @for(am of amonestaciones; track am.id){
-
-                      <div class="jugador-row">
-
-                        <div class="jugador-info">
-
-                          <span class="nombre">
-
-                            {{am.nombre_jugador}}
-
-                          </span>
-
-                          <span class="dni">
-
-                            {{am.equipo}}
-
-                          </span>
-
-                        </div>
-
-
-                        <div class="tarjetas">
-
-                          @for(item of GetTarjetas(am.amarillas); track $index){
-
-                          <div class="amarilla"></div>
-
-                          }
-
-                        </div>
-
-                      </div>
-
-                      }
-
-                    </div>
-
-                  }
-
-                }
-
-
-
-                @if(tabActiva==="plantilla"){
-
-                  @if(plantilla.length===0){
-
-                  <div class="sanciones-vacio">
-
-                    No hay jugadores cargados
-
-                  </div>
-
-                  } @else {
-
-                  <div class="tabla-plantilla">
-
-                    @for(jugador of plantilla; track jugador.id){
-
-                    <div class="jugador-row">
-
-                      <div class="jugador-info">
-
-                        <span class="nombre">
-
-                          {{jugador.nombre}}
-
-                        </span>
-
-                        <span class="dni">
-
-                          DNI {{jugador.dni}}
-
-                        </span>
-
-                      </div>
-
-                    </div>
-
-                    }
-
-                  </div>
-
-                  }
+                <div class="amarilla"></div>
 
                 }
 
@@ -208,13 +187,71 @@
 
           </div>
 
-        }
+          }
+
+          }
+
+
+
+          @if(tabActiva==="plantilla"){
+
+          @if(plantilla.length===0){
+
+          <div class="sanciones-vacio">
+
+            No hay jugadores cargados
+
+          </div>
+
+          } @else {
+
+          <div class="tabla-plantilla">
+
+            @for(jugador of plantilla; track jugador.id){
+
+            <div class="jugador-row">
+
+              <div class="jugador-info">
+
+                <span class="nombre">
+
+                  {{jugador.nombre}}
+
+                </span>
+
+                <span class="dni">
+
+                  DNI {{jugador.dni}}
+
+                </span>
+
+              </div>
+
+            </div>
+
+            }
+
+          </div>
+
+          }
+
+          }
+
+        </div>
 
       </div>
 
+      }
+
     </div>
 
-  }
+    }
+
+  </div>
+
+</div>
+
+}
 
 </div>
 
