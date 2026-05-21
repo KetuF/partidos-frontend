@@ -259,5 +259,10 @@
     height: 60px;
     font-weight: 700;
     color: #ffffff;
+    gap:0px;
+    min-width:0px;
+  }
+  .tabla td {
+    padding: 0px 0px;
   }
 }
