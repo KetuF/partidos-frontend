@@ -1,5 +1,5 @@
 <div class="goleadores-wrapper">
-    <div class="goleadores-header">
+  <div class="goleadores-header">
     <div class="goleadores-icono">
       <img src="assets/LogoTablaGoleadores.png" alt="">
     </div>
@@ -12,12 +12,38 @@
   <div class="goleadores-lista">
     @for (goleador of goleadores.slice(0,5); track goleador.id; let i = $index) {
       <div class="goleador-row" [class.lider]="i === 0">
-        <span class="goleador-pos">{{ i + 1 }}</span>
-        <div class="goleador-info">
-          <span class="goleador-nombre">{{ goleador.nombre_jugador }}</span>
-          <span class="goleador-equipo">{{ goleador.equipo }}</span>
+        <span class="goleador-pos">
+          {{ i + 1 }}
+        </span>
+        <div class="jugador-foto">
+          @if(goleador.foto){
+            <img [src]="goleador.foto" [alt]="goleador.nombre_jugador">
+          } @else {
+            <span>
+              {{ goleador.nombre_jugador[0] }}
+            </span>
+          }
         </div>
-        <span class="goleador-goles">{{ goleador.goles }}</span>
+        <div class="goleador-info">
+          <span class="goleador-nombre">
+            {{ goleador.nombre_jugador }}
+          </span>
+          <div class="equipo-linea">
+            <div class="escudo-mini">
+              @if(goleador.escudo){
+                <img [src]="goleador.escudo" [alt]="goleador.equipo">
+              } @else {
+                🛡️
+              }
+            </div>
+            <span class="goleador-equipo">
+              {{ goleador.equipo }}
+            </span>
+          </div>
+        </div>
+        <span class="goleador-goles">
+          {{ goleador.goles }}
+        </span>
       </div>
     }
   </div>
