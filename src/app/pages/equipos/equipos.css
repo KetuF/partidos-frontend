@@ -83,23 +83,14 @@
 /* GRID */
 
 .equipos-grid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:18px;
+  column-count:2;
+  column-gap:18px;
 }
 
 .equipo-item{
-
-  display:flex;
-
-  flex-direction:column;
+  break-inside: avoid;
+  margin-bottom:18px;
 }
-
-
 
 /* CARD */
 
@@ -508,7 +499,7 @@
 
   .equipos-grid{
 
-    grid-template-columns:1fr;
+    column-count:1;
 
   }
 
