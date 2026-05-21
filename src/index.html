@@ -1,47 +1,61 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>PARTIDOS</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <head>
-  <meta charset="utf-8">
-  <title>Partidos</title>
-  <base href="/">
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S40HX573N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4S40HX573N');
-  </script>
-  <meta name="theme-color" content="#081321">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta charset="utf-8">
+    <title>Partidos</title>
+    <base href="/">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S40HX573N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-4S40HX573N');
+    </script>
+    <meta name="theme-color" content="#081321">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  </head>
 </head>
-</head>
+
 <body>
-    <app-root></app-root>
+  <app-root></app-root>
 </body>
 <style>
-  body { 
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #081321;
+    overflow-x: hidden;
+
+  }
+  body {
     background-image: url('assets/FondoCancha.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
-    }
-  @media (max-width: 768px){ 
-    body { 
-      background-image: url('assets/FondoCanchaMobile.png');
-      background-size: cover;
-      background-position:center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  @media (max-width:768px) {
+    body {
+      background-image:
+        url('assets/FondoCanchaMobile.webp');
     }
   }
 </style>
