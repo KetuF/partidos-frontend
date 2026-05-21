@@ -199,39 +199,6 @@
     0 0 18px rgba(47,124,255,.35);
 }
 
-@media (max-width: 600px) {
-  .goleador-row {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 16px 34px;
-    gap: 10px;
-  }
-
-  .goleadores-header {
-    padding: 20px;
-  }
-
-  .goleadores-icono {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-  }
-
-  .goleador-row {
-    padding: 18px;
-    gap: 14px;
-  }
-
-  .goleador-nombre {
-    font-size: 15px;
-  }
-
-  .goleador-goles {
-    font-size: 24px;
-  }
-}
-
 .jugador-foto{
 
   width:54px;
@@ -316,4 +283,37 @@
 
   object-fit:contain;
 
+}
+
+@media (max-width: 600px) {
+  .goleador-row {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px 34px;
+    gap: 10px;
+  }
+
+  .goleadores-header {
+    padding: 20px;
+  }
+
+  .goleadores-icono {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .goleador-row {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .goleador-nombre {
+    font-size: 15px;
+  }
+
+  .goleador-goles {
+    font-size: 24px;
+  }
 }

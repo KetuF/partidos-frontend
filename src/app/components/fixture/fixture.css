@@ -243,64 +243,6 @@
   letter-spacing: .8px;
 }
 
-@media (max-width: 600px) {
-  .nombre {
-    font-size: 12px;
-    font-weight: 800;
-  }
-
-  .partido-row {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px 14px;
-    gap: 1px;
-  }
-
-  .partido-centro {
-    min-width: 96px;
-  }
-
-  .partido-equipos {
-    width: 100%;
-  }
-
-  .partido-fecha {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    min-width: unset;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    font-size: 11px;
-    color: #999999;
-  }
-
-
-  .fecha {
-    font-size: 10px;
-  }
-
-
-  .proximo-badge {
-    font-size: 8px;
-    padding: 2px 4px;
-  }
-
-  .fixture-header {
-    gap: 16px;
-  }
-
-  .fixture-header-texto span {
-    font-size: 12px;
-  }
-}
-
 .fecha-select {
   height: 52px;
   border-radius: 16px;
@@ -365,4 +307,62 @@
   color: white;
   text-shadow:
     0 3px 14px rgba(0, 0, 0, .5);
+}
+
+@media (max-width: 600px) {
+  .nombre {
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .partido-row {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 14px;
+    gap: 1px;
+  }
+
+  .partido-centro {
+    min-width: 96px;
+  }
+
+  .partido-equipos {
+    width: 100%;
+  }
+
+  .partido-fecha {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    min-width: unset;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 11px;
+    color: #999999;
+  }
+
+
+  .fecha {
+    font-size: 10px;
+  }
+
+
+  .proximo-badge {
+    font-size: 8px;
+    padding: 2px 4px;
+  }
+
+  .fixture-header {
+    gap: 16px;
+  }
+
+  .fixture-header-texto span {
+    font-size: 12px;
+  }
 }
