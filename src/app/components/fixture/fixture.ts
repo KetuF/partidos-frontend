@@ -39,4 +39,9 @@ export class Fixture implements OnChanges {
     }
     this.partidosFiltrados = this.partidos.filter(p => p.numero_fecha === this.fechaSeleccionada);
   }
+
+  onImgError(event: Event){
+    const img = event.target as HTMLImageElement;
+    img.src='assets/escudos/escudo-default.png';
+  }
 }

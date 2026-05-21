@@ -11,4 +11,9 @@ import { Goleador } from '../../interfaces/goleador.interface';
 })
 export class TablaGoleadores {
   @Input() goleadores: Goleador[] = [];
+
+  onImgError(event: Event){
+    const img = event.target as HTMLImageElement;
+    img.src='assets/escudos/escudo-default.png';
+  }
 }

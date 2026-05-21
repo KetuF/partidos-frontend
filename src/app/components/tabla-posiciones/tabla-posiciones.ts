@@ -65,4 +65,9 @@ export class TablaPosiciones implements OnChanges {
       .map(e => ({ ...e, DG: e.GF - e.GC }))
       .sort((a, b) => b.PTS - a.PTS || b.DG - a.DG);
   }
+
+  onImgError(event: Event){
+    const img = event.target as HTMLImageElement;
+    img.src='assets/escudos/escudo-default.png';
+  }
 }

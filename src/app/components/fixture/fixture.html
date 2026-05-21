@@ -27,7 +27,7 @@
         <div class="equipo lado-izq">
 
           <div class="escudo-bg">
-            <img [src]="partido.escudo_local" [alt]="partido.equipo_local">
+            <img [src]="partido.escudo_local" [alt]="partido.equipo_local" (error)="onImgError($event)" class="escudo">
           </div>
 
           <div class="equipo-info">
@@ -60,7 +60,7 @@
         <div class="equipo lado-der">
 
           <div class="escudo-bg">
-            <img [src]="partido.escudo_visitante" [alt]="partido.equipo_visitante">
+            <img [src]="partido.escudo_visitante" [alt]="partido.equipo_visitante" (error)="onImgError($event)" class="escudo">
           </div>
           
           <div class="equipo-info derecha">

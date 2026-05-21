@@ -162,4 +162,9 @@ export class Equipos implements OnInit {
     this.partidosEquipo=[];
     this.amonestaciones=[];
   }
+
+  onImgError(event: Event){
+    const img = event.target as HTMLImageElement;
+    img.src='assets/escudos/escudo-default.png';
+  }
 }

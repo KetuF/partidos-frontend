@@ -60,7 +60,7 @@
         <div class="equipo-izq">
 
           <div class="equipo-logo">
-            <img [src]="equipo.escudo || 'assets/escudo-default.png'" alt="">
+            <img [src]="equipo.escudo || 'assets/escudo-default.png'" alt="" (error)="onImgError($event)" class="escudo">
           </div>
 
           <div class="equipo-info-card">
