@@ -25,6 +25,11 @@
       >
 
         <div class="equipo lado-izq">
+
+          <div class="escudo-bg">
+            <img [src]="partido.escudo_local" [alt]="partido.equipo_local">
+          </div>
+
           <div class="equipo-info">
             <span class="nombre">
               {{ partido.equipo_local }}
@@ -53,6 +58,11 @@
         </div>
 
         <div class="equipo lado-der">
+
+          <div class="escudo-bg">
+            <img [src]="partido.escudo_visitante" [alt]="partido.equipo_visitante">
+          </div>
+          
           <div class="equipo-info derecha">
             <span class="nombre">
               {{ partido.equipo_visitante }}
