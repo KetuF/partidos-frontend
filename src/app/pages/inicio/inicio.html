@@ -20,19 +20,14 @@
         @for (categoria of categorias; track categoria.id) {
           <li class="splide__slide">
             <div class="card" (click)="IrACategoria(categoria.id)">
-              <div class="card-inner" style=
-                "
-                  background:
-                    linear-gradient(
-                      180deg,
-                      rgba(2, 12, 32, 0.96) 0%,
-                      rgba(7, 20, 46, 0.527) 40%,
-                      rgba(13, 27, 42, 1) 100%
-                    ),
-                    url(assets/FondoCard.png);
-
-                  background-size: cover;
-                  border-radius: 22px;
+              <div class="card-inner" [style.background]="
+                  'linear-gradient(
+                    180deg,
+                    rgba(2,12,32,.96) 0%,
+                    rgba(7,20,46,.52) 40%,
+                    rgba(13,27,42,1) 100%
+                  ),
+                  url(' + GetFondoCategoria(categoria.nombre) + ')'
                 ">
                 <span class="card-nombre">{{ categoria.nombre }}</span>
                 <p class="card-textoC">Ver resultados, posiciones y más</p>

@@ -71,4 +71,19 @@ export class Inicio implements OnInit {
     window.scrollTo(0, 0);
     this.router.navigate(['/categoria', id]);
   }
+  GetFondoCategoria(nombre:string):string{
+    switch(nombre){
+      case 'Veteranos +45':
+        return 'assets/FondoCard.png';
+      case 'Liga 2':
+        return 'assets/FondoCard2.png';
+      case 'Liga 3':
+        return 'assets/FondoCard3.png';
+      case 'Liga 4':
+        return 'assets/FondoCard4.png';
+      default:
+        return 'assets/FondoCard.png';
+    }
+
+  }
 }
