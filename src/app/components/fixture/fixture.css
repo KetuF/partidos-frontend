@@ -365,4 +365,10 @@
   .fixture-header-texto span {
     font-size: 12px;
   }
+
+  .fixture-lista {
+    padding: 0px;
+    padding-top: 22px;
+  }
+
 }
