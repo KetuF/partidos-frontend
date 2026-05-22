@@ -18,16 +18,14 @@
       @for (sancion of sanciones; track sancion.id) {
         <div class="sancion-row">
           <div class="sancion-info">
+            <span class="sancion-nombre">
+              {{ sancion.nombre_jugador | titlecase }}
+            </span>
             <div class="equipo-mini">
               <img class="escudo-equipo" [src]="sancion.escudo || 'assets/escudo-default.png'" (error)="onImgError($event)" alt="">
-              <div class="texto-equipo">
-                <span class="sancion-nombre">
-                  {{ sancion.nombre_jugador | titlecase }}
-                </span>
-                <span class="sancion-equipo">
-                  {{ sancion.equipo | uppercase }}
-                </span>
-              </div>
+              <span class="sancion-equipo">
+                {{ sancion.equipo | uppercase }}
+              </span>
             </div>
           </div>
           <div class="sancion-tarjeta">
