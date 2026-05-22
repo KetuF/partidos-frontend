@@ -50,10 +50,10 @@ export class TablaPosiciones implements OnChanges {
       visitante.GF += p.goles_visitante; visitante.GC += p.goles_local;
 
       if (p.goles_local > p.goles_visitante) {
-        local.PG++; local.PTS += 3;
+        local.PG++; local.PTS += 2;
         visitante.PP++;
       } else if (p.goles_local < p.goles_visitante) {
-        visitante.PG++; visitante.PTS += 3;
+        visitante.PG++; visitante.PTS += 2;
         local.PP++;
       } else {
         local.PE++; local.PTS++;
