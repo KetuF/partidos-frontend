@@ -69,11 +69,6 @@ export class Equipos implements OnInit {
     .GetPartidosPorEquipo(equipo.id)
     .subscribe({
       next:(data)=>{
-
-        console.log('Equipo:', equipo.nombre);
-        console.log('ID:', equipo.id);
-        console.log('Partidos:', data);
-
         this.partidosEquipo=data;
         this.cdr.detectChanges();
       }
