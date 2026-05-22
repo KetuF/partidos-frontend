@@ -308,6 +308,23 @@
   letter-spacing: 1px;
 }
 
+.equipo-mini{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.escudo-equipo{
+    width:32px;
+    height:32px;
+    min-width:32px;
+    object-fit:contain;
+    filter:
+      drop-shadow(
+        0 0 8px rgba(255,255,255,.15)
+      );
+}
+
 /* MOBILE */
 
 @media (max-width: 600px) {

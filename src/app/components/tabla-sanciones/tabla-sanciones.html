@@ -1,14 +1,14 @@
 <div class="sanciones-wrapper">
-    <div class="sanciones-header">
+  <div class="sanciones-header">
     <div class="sanciones-icono">
       <img src="assets/LogoTablaSancionados.png" alt="">
     </div>
-
     <div class="sanciones-header-texto">
       <h2>Sancionados</h2>
       <span>Temporada 2026</span>
     </div>
   </div>
+
   @if (sanciones.length === 0) {
     <div class="sanciones-vacio">
       No hay jugadores sancionados
@@ -18,8 +18,17 @@
       @for (sancion of sanciones; track sancion.id) {
         <div class="sancion-row">
           <div class="sancion-info">
-            <span class="sancion-nombre">{{ sancion.nombre_jugador | titlecase }}</span>
-            <span class="sancion-equipo">{{ sancion.equipo | uppercase }}</span>
+            <div class="equipo-mini">
+              <img class="escudo-equipo" [src]="sancion.escudo || 'assets/escudo-default.png'" (error)="onImgError($event)" alt="">
+              <div class="texto-equipo">
+                <span class="sancion-nombre">
+                  {{ sancion.nombre_jugador | titlecase }}
+                </span>
+                <span class="sancion-equipo">
+                  {{ sancion.equipo | uppercase }}
+                </span>
+              </div>
+            </div>
           </div>
           <div class="sancion-tarjeta">
             @if (sancion.tipo === 'roja') {
@@ -31,12 +40,19 @@
           </div>
           <div class="sancion-progreso">
             @for (fecha of GetProgreso(sancion); track $index) {
-              <div class="progreso-punto" [class.cumplido]="$index < GetCumplidas(sancion)"></div>
+              <div
+                class="progreso-punto"
+                [class.cumplido]="$index < GetCumplidas(sancion)">
+              </div>
             }
           </div>
           <div class="sancion-restante">
-            <span class="restante-numero">{{ sancion.fechas_restantes }}</span>
-            <span class="restante-label">{{ sancion.fechas_restantes === 1 ? 'fecha' : 'fechas' }}</span>
+            <span class="restante-numero">
+              {{ sancion.fechas_restantes }}
+            </span>
+            <span class="restante-label">
+              {{ sancion.fechas_restantes === 1 ? 'fecha' : 'fechas' }}
+            </span>
           </div>
         </div>
       }

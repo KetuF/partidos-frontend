@@ -19,4 +19,9 @@ export class TablaSanciones {
   GetCumplidas(sancion: Sancion): number {
     return sancion.partidos_sancion - sancion.fechas_restantes;
   }
+  
+  onImgError(event: Event){
+    const img = event.target as HTMLImageElement;
+    img.src='assets/escudo-default.png';
+  }
 }

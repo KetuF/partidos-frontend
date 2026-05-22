@@ -6,4 +6,6 @@ export interface Sancion {
   partidos_sancion: number;
   numero_fecha_inicio: number;
   fechas_restantes: number;
+
+  escudo:string;
 }
