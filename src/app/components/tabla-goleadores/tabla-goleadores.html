@@ -26,14 +26,14 @@
         </div>
         <div class="goleador-info">
           <span class="goleador-nombre">
-            {{ goleador.nombre_jugador }}
+            {{ goleador.nombre_jugador | titlecase }}
           </span>
           <div class="equipo-linea">
             <div class="escudo-mini">
               <img [src]="goleador.escudo" [alt]="goleador.equipo" (error)="onImgError($event)" class="escudo">
             </div>
             <span class="goleador-equipo">
-              {{ goleador.equipo }}
+              {{ goleador.equipo | uppercase }}
             </span>
           </div>
         </div>

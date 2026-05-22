@@ -32,7 +32,7 @@
             <td class="equipo-nombre">
               <img class="escudo-equipo" [src]="equipo.escudo || 'assets/escudo-default.png'" alt="" (error)="onImgError($event)">
               <span>
-                {{ equipo.nombre }}
+                {{ equipo.nombre | uppercase}}
               </span>
             </td>
             <td>{{ equipo.PJ }}</td>

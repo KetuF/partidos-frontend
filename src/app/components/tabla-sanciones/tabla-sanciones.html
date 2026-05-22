@@ -18,8 +18,8 @@
       @for (sancion of sanciones; track sancion.id) {
         <div class="sancion-row">
           <div class="sancion-info">
-            <span class="sancion-nombre">{{ sancion.nombre_jugador }}</span>
-            <span class="sancion-equipo">{{ sancion.equipo }}</span>
+            <span class="sancion-nombre">{{ sancion.nombre_jugador | titlecase }}</span>
+            <span class="sancion-equipo">{{ sancion.equipo | uppercase }}</span>
           </div>
           <div class="sancion-tarjeta">
             @if (sancion.tipo === 'roja') {

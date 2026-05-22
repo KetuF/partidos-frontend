@@ -9,7 +9,7 @@
       @for (amonestacion of amonestaciones; track amonestacion.id) {
         <div class="amonestacion-row">
           <div class="amonestacion-info">
-            <span class="amonestacion-nombre">{{ amonestacion.nombre_jugador }}</span>
+            <span class="amonestacion-nombre">{{ amonestacion.nombre_jugador | titlecase}}</span>
           </div>
           <div class="amonestacion-tarjetas">
             @for (tarjeta of GetTarjetas(amonestacion.amarillas); track $index) {
