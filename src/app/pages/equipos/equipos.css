@@ -562,6 +562,12 @@
   color:#7f8da3;
 }
 
+.plantilla-vacio{
+  padding: 28px;
+  text-align: center;
+  color: #7f8da3;
+}
+
 /* MOBILE */
 @media(max-width:900px){
 
