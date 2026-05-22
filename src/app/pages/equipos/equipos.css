@@ -365,7 +365,7 @@
   box-shadow:
       0 8px 18px rgba(47,124,255,.35);
 
-  transition:.35s;
+  transition:.35s ease;
 }
 
 .equipo-card.seleccionado .equipo-arrow{
@@ -553,8 +553,6 @@
       0 0 10px rgba(255,255,0,.35);
 }
 
-
-
 .amonestados-vacio{
 
   padding:28px;
@@ -563,8 +561,6 @@
 
   color:#7f8da3;
 }
-
-
 
 /* MOBILE */
 @media(max-width:900px){
