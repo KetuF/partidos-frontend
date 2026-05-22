@@ -27,7 +27,7 @@
       </thead>
       <tbody>
         @for (equipo of posiciones; track equipo.nombre; let i = $index) {
-          <tr [class.lider]="i === 0">
+          <tr [class.lider]="i < 5">
             <td class="pos-num">{{ i + 1 }}</td>
             <td class="equipo-nombre">
               <img class="escudo-equipo" [src]="equipo.escudo || 'assets/escudo-default.png'" alt="" (error)="onImgError($event)">
