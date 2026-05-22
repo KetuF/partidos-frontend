@@ -22,6 +22,12 @@ export class Fixture implements OnChanges {
     const proximo = this.partidos.find(p => !p.jugado);
     this.proximoPartidoId = proximo ? proximo.id : -1;
 
+    if(!this.mostrarFiltroFechas){
+      this.partidosFiltrados=
+        [...this.partidos];
+      return;
+    }
+
     this.fechasDisponibles = [...new Set(this.partidos.map(p => p.numero_fecha))].sort();
     
     if (proximo) {
