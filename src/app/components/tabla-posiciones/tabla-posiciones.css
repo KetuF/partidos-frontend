@@ -203,11 +203,11 @@
 /* PUNTOS */
 
 .puntos {
-  font-weight: 800;
+  font-weight: 900;
 
   color: #2f7cff !important;
 
-  font-size: 15px;
+  font-size: 18px;
 
   text-shadow:
     0 0 10px rgba(47,124,255,.45);
