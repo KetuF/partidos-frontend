@@ -9,6 +9,8 @@ import { Fixture } from '../../components/fixture/fixture';
 import { Footer } from '../../components/footer/footer';
 import { AmonestacionesService } from '../../services/amonestacionesService';
 import { Amonestacion } from '../../interfaces/amonestaciones.interface';
+import { PlantillaService } from '../../services/plantillaService';
+import { Jugador } from '../../interfaces/plantilla.interface';
 
 @Component({
   selector: 'app-equipos',
@@ -23,6 +25,7 @@ export class Equipos implements OnInit {
   private partidosService = inject(PartidosService);
   private cdr = inject(ChangeDetectorRef);
   private amonestacionesService = inject(AmonestacionesService);
+  private plantillaService=inject(PlantillaService);
 
   equipos: Equipo[] = [];
   equipoSeleccionado: Equipo | null = null;
@@ -30,19 +33,7 @@ export class Equipos implements OnInit {
   amonestaciones: Amonestacion[] = [];
   tabActiva:'fixture'|'amonestados'|'plantilla'='fixture';
   categoriaActualIndex=0;
-
-  plantilla=[
-    {
-      id:1,
-      nombre:'Juan Pérez',
-      dni:'41234567'
-    },
-    {
-      id:2,
-      nombre:'Lucas Gómez',
-      dni:'39876543'
-    }
-  ];
+  plantilla:Jugador[]=[];
 
   ngOnInit():void{
     this.equiposService.GetEquipos().subscribe({
@@ -91,6 +82,16 @@ export class Equipos implements OnInit {
         this.cdr.detectChanges();
       }
     });
+
+    this.plantillaService
+      .GetPlantilla(equipo.id).subscribe({
+        next:(data)=>{
+            this.plantilla=data;
+            this.cdr.detectChanges();
+        },
+        error:(err)=>console.log(err)
+    });
+    
   }
 
   GetCategorias():string[]{
