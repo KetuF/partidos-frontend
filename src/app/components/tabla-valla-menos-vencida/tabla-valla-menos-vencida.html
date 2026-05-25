@@ -1,62 +1,57 @@
 <div class="valla-wrapper">
-
-<div class="valla-header">
-
+  <div class="valla-header">
     <div class="valla-icono">
-        <img src="assets/LogoCopaAzul.png">
+      <img src="assets/logoTablaVallaMenosVencida.png">
     </div>
 
     <div class="valla-header-texto">
-        <h2>Valla menos vencida</h2>
-        <span>Top 3</span>
+      <h2>Valla menos vencida</h2>
+      <span>Temporada 2026</span>
     </div>
+  </div>
 
-</div>
+  <div class="valla-lista">
 
-<div class="valla-lista">
+    @for(
+      equipo of vallas;
+      track equipo.nombre;
+      let i=$index
+    ){
 
-@for(
-equipo of vallas;
-track equipo.nombre;
-let i=$index
-){
+    <div
+      class="valla-row"
+      [class.lider]="i===0">
 
-<div class="valla-row">
-
-    <span class="puesto">
+      <span class="valla-pos">
         {{i+1}}
-    </span>
+      </span>
 
-    <div class="equipo-info">
-
+      <div class="escudo-grande">
         <img
         [src]="equipo.escudo || 'assets/escudo-default.png'"
-        (error)="onImgError($event)"
-        class="escudo">
+        (error)="onImgError($event)">
+      </div>
 
-        <div>
+      <div class="valla-info">
 
-            <span class="nombre">
+        <span class="valla-nombre">
+          {{equipo.nombre | uppercase}}
+        </span>
 
-                {{equipo.nombre | uppercase}}
+        <span class="valla-equipo">
+          {{equipo.gc}}
+          goles recibidos
+        </span>
 
-            </span>
+      </div>
 
-            <span class="detalle">
-
-                {{equipo.gc}}
-                goles recibidos
-
-            </span>
-
-        </div>
+      <span class="valla-goles">
+        {{equipo.gc}}
+      </span>
 
     </div>
 
-</div>
+    }
 
-}
-
-</div>
-
+  </div>
 </div>
