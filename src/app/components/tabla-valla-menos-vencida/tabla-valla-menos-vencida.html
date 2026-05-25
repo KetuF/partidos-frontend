@@ -1,0 +1,62 @@
+<div class="valla-wrapper">
+
+<div class="valla-header">
+
+    <div class="valla-icono">
+        <img src="assets/LogoCopaAzul.png">
+    </div>
+
+    <div class="valla-header-texto">
+        <h2>Valla menos vencida</h2>
+        <span>Top 3</span>
+    </div>
+
+</div>
+
+<div class="valla-lista">
+
+@for(
+equipo of vallas;
+track equipo.nombre;
+let i=$index
+){
+
+<div class="valla-row">
+
+    <span class="puesto">
+        {{i+1}}
+    </span>
+
+    <div class="equipo-info">
+
+        <img
+        [src]="equipo.escudo || 'assets/escudo-default.png'"
+        (error)="onImgError($event)"
+        class="escudo">
+
+        <div>
+
+            <span class="nombre">
+
+                {{equipo.nombre | uppercase}}
+
+            </span>
+
+            <span class="detalle">
+
+                {{equipo.gc}}
+                goles recibidos
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+}
+
+</div>
+
+</div>

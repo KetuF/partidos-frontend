@@ -17,11 +17,12 @@ import { Footer } from '../../components/footer/footer';
 import { Sancion } from '../../interfaces/sancion.interface';
 import { TablaSanciones } from '../../components/tabla-sanciones/tabla-sanciones';
 import { SancionesService } from '../../services/sancionesService';
+import { TablaVallaMenosVencida } from '../../components/tabla-valla-menos-vencida/tabla-valla-menos-vencida';
 
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule, Navbar, TablaPosiciones, Fixture, TablaGoleadores, Footer, TablaSanciones],
+  imports: [CommonModule, Navbar, TablaPosiciones, Fixture, TablaGoleadores, Footer, TablaSanciones, TablaVallaMenosVencida],
   templateUrl: './categoria.html',
   styleUrl: './categoria.css'
 })

@@ -30,6 +30,13 @@
       (click)="scrollTo('sanciones')">
       Sansiones
     </button>
+
+    <button
+      class="nav-item"
+      [class.active]="activeSection === 'arqueros'"
+      (click)="scrollTo('arqueros')">
+      Arqueros
+    </button>
   </div>
 
   <section id="posiciones">
@@ -58,6 +65,10 @@
 
   <section id="sanciones">
     <app-tabla-sanciones [sanciones]="sanciones"></app-tabla-sanciones>
+  </section>
+
+  <section id="arqueros">
+    <app-tabla-valla-menos-vencida [partidos]="partidos" [equipos]="equipos"></app-tabla-valla-menos-vencida>
   </section>
 
 </div>
