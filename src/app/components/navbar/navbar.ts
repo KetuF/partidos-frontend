@@ -47,6 +47,11 @@ export class Navbar implements OnInit {
 
   IrAInicio(): void {
     this.menuAbierto = false;
+    this.router.navigate(['/historia']);
+  }
+
+  IrAHistoria(): void {
+    this.menuAbierto = false;
     this.router.navigate(['/inicio']);
   }
 
