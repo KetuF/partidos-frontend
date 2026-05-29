@@ -47,12 +47,12 @@ export class Navbar implements OnInit {
 
   IrAInicio(): void {
     this.menuAbierto = false;
-    this.router.navigate(['/historia']);
+    this.router.navigate(['/inicio']);
   }
 
   IrAHistoria(): void {
     this.menuAbierto = false;
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/historia']);
   }
 
   ToggleCategorias(): void {

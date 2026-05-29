@@ -14,10 +14,12 @@ export const routes: Routes = [
     component: Equipos
   },
   { 
-    path: 'inicio', component: Inicio 
+    path: 'inicio',
+    component: Inicio 
   },
   { 
-    path: 'historia', component: Historia 
+    path: 'historia',
+    component: Historia 
   },
   {
     path: '**',
